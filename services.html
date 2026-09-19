@@ -3,87 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services — KayJay Commercial Cleaning</title>
+    <title>Commercial Cleaning Services — KayJay Cleaning Services LLC</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo_top_left.png">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: { DEFAULT: '#0F172A', light: '#1E293B' },
-                        cyan: { DEFAULT: '#00E5FF', dark: '#00B8D4' }
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Smooth Scroll & Base Colors */
+        html { scroll-behavior: smooth; }
+        .bg-navy { background-color: #0F172A; }
+        .bg-navy-light { background-color: #1E293B; }
+        .bg-cyan-brand { background-color: #00E5FF; }
+        .text-cyan-brand { color: #00E5FF; }
+        
+        /* Service Cards & Glow */
+        .service-detail-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .service-detail-card:hover {
+            border-color: #00E5FF;
+            box-shadow: 0 12px 35px -10px rgba(0, 229, 255, 0.25);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.08); }
+        }
+        .animate-glow {
+            animation: pulseGlow 6s infinite ease-in-out;
+        }
+
+        /* 📜 KESİNTİSİZ & KUSURSUZ SCROLL ANIMATION 📜 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
 </head>
-<body class="bg-navy text-slate-100 font-sans antialiased">
+<body class="bg-navy text-slate-100 font-sans antialiased min-h-screen flex flex-col pb-16 md:pb-0">
 
     <!-- Top Bar -->
-    <div class="bg-navy text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="bg-[#0b1836] text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-6">
-                <span><i class="fas fa-shield-alt text-cyan mr-2"></i>Fully Insured & Bonded</span>
-                <span class="hidden md:inline"><i class="fas fa-map-marker-alt text-cyan mr-2"></i>Greater Pittsburgh Area, PA</span>
+                <span><i class="fas fa-shield-alt text-cyan-brand mr-2"></i>Fully Insured & Bonded</span>
+                <span class="hidden md:inline"><i class="fas fa-check-circle text-cyan-brand mr-2"></i>Flexible Scheduling Available</span>
             </div>
-            <div></div>
+            <div>
+                <a href="contact.html" class="hover:text-cyan-brand transition flex items-center gap-1.5">
+                    <i class="fas fa-envelope text-cyan-brand"></i> info@kayjaycleaning.com
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-navy-light text-white sticky top-0 z-50 shadow-lg border-b border-slate-700">
+    <nav class="bg-navy-light/95 sticky top-0 z-50 shadow-lg border-b border-slate-700/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3">
-                <img src="Logo_top_left.png" alt="KayJay Logo" class="h-10 w-auto object-contain">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="Logo_top_left.png" alt="KayJay Logo" class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
                 <div class="flex flex-col justify-center">
                     <span class="text-xl font-bold tracking-wider text-white leading-none flex items-baseline">
-                        KAYJA<span class="translate-y-1 inline-block">J</span>
+                        KAYJAY
                     </span>
-                    <span class="text-[9px] tracking-widest text-cyan uppercase font-medium mt-1">Facility & Commercial Cleaning</span>
+                    <span class="text-[9px] tracking-widest text-cyan-brand uppercase font-medium mt-1">Facility & Commercial Cleaning</span>
                 </div>
             </a>
+
+            <!-- Desktop Links -->
             <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="services.html" class="text-cyan font-bold border-b-2 border-cyan pb-1">Services</a>
-                <a href="why-us.html" class="hover:text-cyan transition">Why KayJay</a>
-                <a href="about.html" class="hover:text-cyan transition">About Us</a>
-                <a href="contact.html" class="hover:text-cyan transition">Contact</a>
+                <a href="services.html" class="text-cyan-brand transition duration-200 font-bold">Services</a>
+                <a href="why-us.html" class="hover:text-cyan-brand transition duration-200">Why KayJay</a>
+                <a href="about.html" class="hover:text-cyan-brand transition duration-200">About Us</a>
+                <a href="contact.html" class="hover:text-cyan-brand transition duration-200">Contact</a>
             </div>
-            <a href="contact.html" class="bg-cyan text-navy font-bold px-5 py-2.5 rounded-md hover:bg-cyan-400 transition text-sm shadow-md">
-                Get a Quote
-            </a>
+
+            <div class="hidden lg:block border-l border-slate-700 pl-6">
+                <span class="text-sm font-semibold tracking-widest text-cyan-brand uppercase italic">
+                    "Clean Means Business"
+                </span>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Navigation">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light border-b border-slate-700 px-4 pt-2 pb-4 space-y-3 text-sm font-medium">
+            <a href="services.html" class="block text-cyan-brand font-bold py-1 border-b border-slate-800">Services</a>
+            <a href="why-us.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">Why KayJay</a>
+            <a href="about.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">About Us</a>
+            <a href="contact.html" class="block hover:text-cyan-brand py-1">Contact</a>
         </div>
     </nav>
 
-    <!-- Header / Hero Section -->
-    <section class="py-16 bg-navy-light border-b border-slate-800 text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Commercial Cleaning Services</h1>
-            <p class="text-slate-300 text-lg">High-standard janitorial and facility maintenance tailored for commercial spaces across Pittsburgh.</p>
+    <!-- Header / Hero Banner -->
+    <section class="relative py-16 md:py-20 bg-navy border-b border-slate-800 overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-cyan-brand/10 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <span class="bg-cyan-brand/10 text-cyan-brand text-xs font-semibold px-3 py-1 rounded-full border border-cyan-brand/30 uppercase tracking-wider inline-block mb-4">
+                Tailored Commercial Programs
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Our Commercial Services</h1>
+            <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                Comprehensive janitorial, facility maintenance, and turnover cleaning designed around your business hours and property requirements.
+            </p>
         </div>
     </section>
 
-    <!-- Services Content Section -->
-    <section class="py-20 max-w-7xl mx-auto px-4">
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-navy-light p-8 rounded-xl border border-slate-700">
-                <i class="fas fa-building text-cyan text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Office & Corporate Cleaning</h3>
-                <p class="text-slate-400 text-sm">Daily, weekly, or custom cleaning schedules to keep your office professional and hygienic.</p>
+    <!-- Main Services Grid -->
+    <section class="py-16 max-w-7xl mx-auto px-4 space-y-12">
+
+        <!-- 1. Office & Corporate -->
+        <div id="office" class="reveal service-detail-card bg-navy-light p-8 rounded-2xl border border-slate-700/80 grid md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-building text-cyan-brand text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Office & Corporate Janitorial</h2>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    A clean office environment boosts productivity and creates an immediate positive impression for visiting clients. We offer customized daily, weekly, or bi-weekly maintenance schedules tailored to executive suites and workplace layouts.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Desk & Workstation Sanitization</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Trash & Recycling Removal</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Restroom Disinfection & Restocking</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> High-Touch Surface Cleaning</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Breakroom & Kitchen Care</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Vacuuming & Hard Floor Care</div>
+                </div>
             </div>
-            <div class="bg-navy-light p-8 rounded-xl border border-slate-700">
-                <i class="fas fa-industry text-cyan text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Industrial & Facility Cleaning</h3>
-                <p class="text-slate-400 text-sm">Heavy-duty janitorial solutions for warehouses, manufacturing plants, and industrial complexes.</p>
+            <div class="bg-navy p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center h-full">
+                <h3 class="text-white font-bold text-base mb-2">Need Custom Office Care?</h3>
+                <p class="text-xs text-slate-400 mb-6">Schedule after-hours shifts with zero workflow interruption.</p>
+                <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold py-2.5 px-4 rounded text-xs hover:bg-cyan-400 transition">Get Office Quote</a>
             </div>
-            <div class="bg-navy-light p-8 rounded-xl border border-slate-700">
-                <i class="fas fa-broom text-cyan text-3xl mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Post-Construction Cleanup</h3>
-                <p class="text-slate-400 text-sm">Detailed debris removal, dust control, and final polish for new builds and renovations.</p>
+        </div>
+
+        <!-- 2. Apartment & Multi-Family -->
+        <div id="apartment" class="reveal service-detail-card bg-navy-light p-8 rounded-2xl border border-slate-700/80 grid md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-city text-cyan-brand text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Apartment & Multi-Family Facilities</h2>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Maintaining pristine common areas is essential for tenant retention and lease renewals. We partner with property managers to keep shared spaces clean, hygienic, and inviting year-round.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Hallways, Stairs & Lobbies</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Elevator Glass & Button Care</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Clubhouse & Gym Disinfection</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Laundry Facility Sanitation</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Common Restroom Maintenance</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Trash Chute & Compactor Area Care</div>
+                </div>
+            </div>
+            <div class="bg-navy p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center h-full">
+                <h3 class="text-white font-bold text-base mb-2">Property Managers</h3>
+                <p class="text-xs text-slate-400 mb-6">Set up recurring scheduled visits for your building assets.</p>
+                <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold py-2.5 px-4 rounded text-xs hover:bg-cyan-400 transition">Contact Property Team</a>
+            </div>
+        </div>
+
+        <!-- 3. Move-In / Move-Out Turnover -->
+        <div id="turnover" class="reveal service-detail-card bg-navy-light p-8 rounded-2xl border border-slate-700/80 grid md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-key text-cyan-brand text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Move-In / Move-Out Turnover</h2>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Fast, thorough turn cleaning designed to get vacant units ready for new tenants rapidly. We ensure every corner passes move-in inspection standards.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Appliance Deep Cleaning (Inside/Out)</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Cabinet & Drawer Wipe Down</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Bathroom Descaling & Scouring</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Baseboard & Trim Detailing</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Window Sill & Track Scrubbing</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Complete Floor Scrubbing/Mopping</div>
+                </div>
+            </div>
+            <div class="bg-navy p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center h-full">
+                <h3 class="text-white font-bold text-base mb-2">Fast Turnover Turnaround</h3>
+                <p class="text-xs text-slate-400 mb-6">Minimize vacancy duration with rapid crew scheduling.</p>
+                <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold py-2.5 px-4 rounded text-xs hover:bg-cyan-400 transition">Schedule Turnover</a>
+            </div>
+        </div>
+
+        <!-- 4. Retail & Showrooms -->
+        <div id="retail" class="reveal service-detail-card bg-navy-light p-8 rounded-2xl border border-slate-700/80 grid md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-store text-cyan-brand text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Retail & Showroom Care</h2>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    In retail, presentation drives sales. We maintain pristine floors, crystal-clear glass displays, and welcoming entryways that highlight your merchandise.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Interior Glass & Display Polishing</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> High-Traffic Floor Maintenance</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Fitting Room Disinfection</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Entrance & Vestibule Cleaning</div>
+                </div>
+            </div>
+            <div class="bg-navy p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center h-full">
+                <h3 class="text-white font-bold text-base mb-2">Storefront Solutions</h3>
+                <p class="text-xs text-slate-400 mb-6">Early morning or post-closing shifts available.</p>
+                <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold py-2.5 px-4 rounded text-xs hover:bg-cyan-400 transition">Book Retail Care</a>
+            </div>
+        </div>
+
+        <!-- 5. Medical & Professional Suites -->
+        <div id="medical" class="reveal service-detail-card bg-navy-light p-8 rounded-2xl border border-slate-700/80 grid md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-user-md text-cyan-brand text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Medical & Professional Suites</h2>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Outpatient clinics, dental offices, law firms, and financial institutions require elevated hygienic practices. We utilize hospital-grade disinfectants and structured cross-contamination protocols.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Hospital-Grade Disinfection</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Waiting Room & Desk Sanitation</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Color-Coded Microfiber System</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Strict Cross-Contamination Avoidance</div>
+                </div>
+            </div>
+            <div class="bg-navy p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center h-full">
+                <h3 class="text-white font-bold text-base mb-2">High-Sanitation Standards</h3>
+                <p class="text-xs text-slate-400 mb-6">Customized for health & professional compliance.</p>
+                <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold py-2.5 px-4 rounded text-xs hover:bg-cyan-400 transition">Request Medical Quote</a>
+            </div>
+        </div>
+
+        <!-- 6. Event & Venue Care -->
+        <div id="event" class="reveal service-detail-card bg-navy-light p-8 rounded-2xl border border-slate-700/80 grid md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-calendar-check text-cyan-brand text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">Event & Venue Care</h2>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    Pre-event deep cleaning and rapid post-event cleanup for corporate events, banquet halls, and commercial venues. We quickly restore your space back to operational condition.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Pre-Event Setup & Walkthrough</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Rapid Debris & Trash Haul Away</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Restroom Monitoring & Refill</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-brand"></i> Floor Scrubbing & Spot Removal</div>
+                </div>
+            </div>
+            <div class="bg-navy p-6 rounded-xl border border-slate-800 text-center flex flex-col justify-center h-full">
+                <h3 class="text-white font-bold text-base mb-2">Post-Event Reset</h3>
+                <p class="text-xs text-slate-400 mb-6">Fast cleanup teams for immediate availability.</p>
+                <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold py-2.5 px-4 rounded text-xs hover:bg-cyan-400 transition">Book Venue Care</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="py-16 bg-navy-light/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="reveal text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Our Service Process</h2>
+                <p class="text-slate-400 text-sm">How we onboard and maintain high quality for your property.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="reveal bg-navy-light p-6 rounded-xl border border-slate-700/80 text-center">
+                    <div class="w-10 h-10 bg-cyan-brand text-slate-900 font-extrabold rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+                    <h3 class="text-white font-bold mb-2">Initial Walkthrough</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">We assess your facility square footage, high-traffic zones, and custom needs.</p>
+                </div>
+
+                <div class="reveal bg-navy-light p-6 rounded-xl border border-slate-700/80 text-center">
+                    <div class="w-10 h-10 bg-cyan-brand text-slate-900 font-extrabold rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+                    <h3 class="text-white font-bold mb-2">Tailored Proposal</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">You receive an itemized, transparent checklist proposal within 24 hours.</p>
+                </div>
+
+                <div class="reveal bg-navy-light p-6 rounded-xl border border-slate-700/80 text-center">
+                    <div class="w-10 h-10 bg-cyan-brand text-slate-900 font-extrabold rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+                    <h3 class="text-white font-bold mb-2">Onboarding & Execution</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Vetted and insured technicians carry out scheduled shifts according to specs.</p>
+                </div>
+
+                <div class="reveal bg-navy-light p-6 rounded-xl border border-slate-700/80 text-center">
+                    <div class="w-10 h-10 bg-cyan-brand text-slate-900 font-extrabold rounded-full flex items-center justify-center mx-auto mb-4">4</div>
+                    <h3 class="text-white font-bold mb-2">Quality Audits</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Supervisors conduct routine inspections to guarantee ongoing excellence.</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- CTA Banner -->
+    <section class="reveal bg-cyan-brand py-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">Ready for a Custom Service Proposal?</h2>
+                <p class="text-slate-800 font-medium text-sm md:text-base">Tell us about your facility and get an itemized quote in 24 hours.</p>
+            </div>
+            <div>
+                <a href="contact.html" class="bg-navy text-white font-bold px-8 py-3.5 rounded-md hover:bg-navy-light transition duration-300 shadow-xl inline-block text-center whitespace-nowrap hover:scale-105">
+                    Request Proposal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-light text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm">
+            <!-- Col 1 -->
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <img src="Logo_top_left.png" alt="KayJay Logo" class="h-12 w-auto object-contain">
+                    <span class="text-xl font-bold text-white tracking-wider">KAYJAY</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                    Premier facility & commercial cleaning services serving commercial and residential properties.
+                </p>
+                <div class="inline-flex items-center gap-2 text-[11px] bg-navy px-3 py-1.5 rounded-md border border-slate-700 text-cyan-brand">
+                    <i class="fas fa-shield-alt"></i> Fully Insured & Bonded
+                </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html" class="hover:text-cyan-brand transition">Services</a></li>
+                    <li><a href="why-us.html" class="hover:text-cyan-brand transition">Why KayJay</a></li>
+                    <li><a href="about.html" class="hover:text-cyan-brand transition">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-cyan-brand transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Our Services</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html#office" class="hover:text-cyan-brand transition">Office & Corporate Cleaning</a></li>
+                    <li><a href="services.html#apartment" class="hover:text-cyan-brand transition">Apartment & Multi-Family</a></li>
+                    <li><a href="services.html#turnover" class="hover:text-cyan-brand transition">Move-In / Move-Out Turnover</a></li>
+                    <li><a href="services.html#retail" class="hover:text-cyan-brand transition">Retail & Showroom Care</a></li>
+                    <li><a href="services.html#medical" class="hover:text-cyan-brand transition">Medical & Professional Suites</a></li>
+                    <li><a href="services.html#event" class="hover:text-cyan-brand transition">Event & Venue Care</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Service Hours & Contact</h4>
+                <div class="space-y-2.5 text-xs">
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-cyan-brand"></i>
+                        <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan-brand transition">info@kayjaycleaning.com</a>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-clock text-cyan-brand"></i>
+                        <span>Tailored After-Hours & Weekend Shifts</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-shield-alt text-cyan-brand"></i>
+                        <span>Commercial Facility Care</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-slate-800 text-xs text-center text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                &copy; 2026 KayJay Cleaning Services LLC. All rights reserved.
+            </div>
+            <div class="text-[11px] text-slate-400 italic">
+                "Clean Means Business"
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Bottom CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-navy-light/95 border-t border-slate-700 p-3 z-50 flex items-center justify-between backdrop-blur-md">
+        <span class="text-xs text-slate-300 font-medium">Need Commercial Cleaning?</span>
+        <a href="contact.html" class="bg-cyan-brand text-slate-900 text-xs font-bold px-4 py-2 rounded shadow">
+            Get Quote
+        </a>
+    </div>
+
+    <!-- 📜 SCRIPTS 📜 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // 📜 HER SCROLL'DA TEKRARLAYAN ANIMASYON
+            const reveals = document.querySelectorAll(".reveal");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px 0px -50px 0px",
+                threshold: 0.05
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    } else {
+                        entry.target.classList.remove("active");
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach((reveal) => {
+                observer.observe(reveal);
+            });
+
+            // Yüklenme anında görünürlük garantisi
+            setTimeout(() => {
+                reveals.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 50);
+        });
+    </script>
 
 </body>
 </html>
