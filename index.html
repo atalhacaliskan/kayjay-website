@@ -10,198 +10,206 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: { DEFAULT: '#0F172A', light: '#1E293B' },
-                        cyan: { DEFAULT: '#00E5FF', dark: '#00B8D4' }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome & AOS Animation Library -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <style>
+        /* Custom Colors & Smooth Scroll */
+        html { scroll-behavior: smooth; }
+        .bg-navy { background-color: #0F172A; }
+        .bg-navy-light { background-color: #1E293B; }
+        .bg-cyan-brand { background-color: #00E5FF; }
+        .text-cyan-brand { color: #00E5FF; }
+        .border-cyan-brand { border-color: #00E5FF; }
+    </style>
 </head>
-<body class="bg-navy text-slate-100 font-sans antialiased overflow-x-hidden">
+<body class="bg-navy text-slate-100 font-sans antialiased min-h-screen flex flex-col">
 
     <!-- Top Bar -->
     <div class="bg-[#0b1836] text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-6">
-                <span><i class="fas fa-shield-alt text-cyan mr-2"></i>Fully Insured & Bonded</span>
-                <span class="hidden md:inline"><i class="fas fa-check-circle text-cyan mr-2"></i>Flexible After-Hours Service</span>
+                <span><i class="fas fa-shield-alt text-cyan-brand mr-2"></i>Fully Insured & Bonded</span>
+                <span class="hidden md:inline"><i class="fas fa-check-circle text-cyan-brand mr-2"></i>Flexible After-Hours Service</span>
             </div>
             <div>
-                <a href="contact.html" class="hover:text-cyan transition flex items-center gap-1.5"><i class="fas fa-envelope text-cyan"></i> info@kayjaycleaning.com</a>
+                <a href="contact.html" class="hover:text-cyan-brand transition flex items-center gap-1.5">
+                    <i class="fas fa-envelope text-cyan-brand"></i> info@kayjaycleaning.com
+                </a>
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="bg-navy-light/90 backdrop-blur-md text-white sticky top-0 z-50 shadow-lg border-b border-slate-700/80 transition-all">
+    <nav class="bg-navy-light/95 sticky top-0 z-50 shadow-lg border-b border-slate-700/80">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <img src="Logo_top_left.png" alt="KayJay Logo" class="h-10 w-auto object-contain group-hover:scale-105 transition duration-300">
+                <img src="Logo_top_left.png" alt="KayJay Logo" class="h-10 w-auto object-contain">
                 <div class="flex flex-col justify-center">
                     <span class="text-xl font-bold tracking-wider text-white leading-none flex items-baseline">
-                        KAYJAY
+                        KAYJA<span class="translate-y-1 inline-block">J</span>
                     </span>
-                    <span class="text-[9px] tracking-widest text-cyan uppercase font-medium mt-1">Facility & Commercial Cleaning</span>
+                    <span class="text-[9px] tracking-widest text-cyan-brand uppercase font-medium mt-1">Facility & Commercial Cleaning</span>
                 </div>
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="services.html" class="hover:text-cyan transition duration-200">Services</a>
-                <a href="why-us.html" class="hover:text-cyan transition duration-200">Why KayJay</a>
-                <a href="about.html" class="hover:text-cyan transition duration-200">About Us</a>
-                <a href="contact.html" class="hover:text-cyan transition duration-200">Contact</a>
+                <a href="services.html" class="hover:text-cyan-brand transition duration-200">Services</a>
+                <a href="why-us.html" class="hover:text-cyan-brand transition duration-200">Why KayJay</a>
+                <a href="about.html" class="hover:text-cyan-brand transition duration-200">About Us</a>
+                <a href="contact.html" class="hover:text-cyan-brand transition duration-200">Contact</a>
             </div>
-            <div class="hidden lg:block border-l border-slate-700 pl-7">
-                <span class="text-sm font-semibold tracking-widest text-cyan uppercase italic">
+            <div class="hidden lg:block border-l border-slate-700 pl-6">
+                <span class="text-sm font-semibold tracking-widest text-cyan-brand uppercase italic">
                     "Clean Means Business"
                 </span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (With Glow Blob Effect) -->
-    <section class="relative py-20 md:py-28 bg-navy border-b border-slate-800 overflow-hidden">
-        <!-- Background Ambient Glow -->
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-cyan/10 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
-
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div data-aos="fade-right">
-                <span class="bg-cyan/10 text-cyan text-xs font-semibold px-3 py-1 rounded-full border border-cyan/30 uppercase tracking-wider inline-block mb-4">
+    <!-- Hero Section -->
+    <section class="relative py-16 md:py-24 bg-navy border-b border-slate-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="bg-cyan-brand/10 text-cyan-brand text-xs font-semibold px-3 py-1 rounded-full border border-cyan-brand/30 uppercase tracking-wider inline-block mb-4">
                     Commercial & Multi-Family Solutions
                 </span>
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
                     Premium Facility & Commercial Cleaning
                 </h1>
-                <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
                     Reliable, high-standard janitorial and property maintenance tailored for offices, apartment complexes, and commercial spaces across the Greater Pittsburgh region.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="contact.html" class="bg-cyan text-navy font-bold px-8 py-3.5 rounded-md text-center hover:bg-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan/20 hover:-translate-y-0.5">
+                    <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold px-8 py-3.5 rounded-md text-center hover:bg-cyan-400 transition-all shadow-lg">
                         Schedule a Consultation
                     </a>
-                    <a href="services.html" class="border border-slate-600 text-white font-semibold px-8 py-3.5 rounded-md text-center hover:bg-slate-800 transition duration-300">
+                    <a href="services.html" class="border border-slate-600 text-white font-semibold px-8 py-3.5 rounded-md text-center hover:bg-slate-800 transition">
                         Explore Services
                     </a>
                 </div>
             </div>
             
             <!-- Trust Card -->
-            <div data-aos="fade-left" data-aos-delay="200" class="bg-navy-light p-8 rounded-2xl border border-slate-700/80 shadow-2xl relative overflow-hidden group hover:border-cyan/40 transition duration-500">
-                <div class="absolute top-0 left-0 w-2 h-full bg-cyan"></div>
+            <div class="bg-navy-light p-8 rounded-2xl border border-slate-700 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-cyan-brand"></div>
                 <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                    <i class="fas fa-award text-cyan"></i> Why Property Managers Trust Us
+                    <i class="fas fa-award text-cyan-brand"></i> Why Property Managers Trust Us
                 </h3>
                 <ul class="space-y-4 text-slate-300 text-sm">
-                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan mt-1 mr-3 flex-shrink-0"></i><span><strong>OSHA Compliant:</strong> Strict adherence to safety & industry standards.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan mt-1 mr-3 flex-shrink-0"></i><span><strong>Flexible Schedules:</strong> Daily, weekly, or custom turnover shifts.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan mt-1 mr-3 flex-shrink-0"></i><span><strong>Vetted Staff:</strong> Rigorously trained and background-checked technicians.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan mt-1 mr-3 flex-shrink-0"></i><span><strong>Quality Audits:</strong> Regular supervisor inspections for top-tier quality.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>OSHA Compliant:</strong> Strict adherence to safety & industry standards.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Flexible Schedules:</strong> Daily, weekly, or custom turnover shifts.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Vetted Staff:</strong> Rigorously trained and background-checked technicians.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Quality Audits:</strong> Regular supervisor inspections for top-tier quality.</span></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview Section (6-Grid Animated Cards) -->
-    <section class="py-20 max-w-7xl mx-auto px-4">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <h2 class="text-3xl font-extrabold text-white mb-4">Core Commercial Services</h2>
-            <p class="text-slate-400">Tailored, reliable janitorial programs for commercial and residential properties.</p>
+    <!-- Services Section -->
+    <section class="py-16 max-w-7xl mx-auto px-4 flex-grow">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-extrabold text-white mb-3">Core Commercial Services</h2>
+            <p class="text-slate-400 text-sm md:text-base">Tailored, reliable janitorial programs for commercial and residential properties.</p>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Card 1: Office & Corporate -->
-            <div data-aos="fade-up" data-aos-delay="100" class="group bg-navy-light p-8 rounded-xl border border-slate-700 hover:border-cyan/60 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(0,229,255,0.25)] transition-all duration-300">
-                <div class="w-14 h-14 bg-cyan/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan/20 transition duration-300">
-                    <i class="fas fa-building text-cyan text-2xl group-hover:scale-110 transition duration-300"></i>
+            <!-- Service 1 -->
+            <div class="bg-navy-light p-6 rounded-xl border border-slate-700 hover:border-cyan-brand transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-building text-cyan-brand text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Office & Corporate</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Daily or weekly janitorial maintenance for modern workplaces, lobbies, and executive suites.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Office & Corporate</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Daily or weekly janitorial maintenance for modern workplaces, lobbies, and executive suites.</p>
-                <a href="services.html" class="inline-flex items-center text-cyan font-semibold text-sm hover:underline">
-                    Learn More <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-2 transition duration-300"></i>
+                <a href="services.html" class="text-cyan-brand font-semibold text-sm inline-flex items-center hover:underline">
+                    Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
 
-            <!-- Card 2: Apartment & Multi-Family -->
-            <div data-aos="fade-up" data-aos-delay="200" class="group bg-navy-light p-8 rounded-xl border border-slate-700 hover:border-cyan/60 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(0,229,255,0.25)] transition-all duration-300">
-                <div class="w-14 h-14 bg-cyan/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan/20 transition duration-300">
-                    <i class="fas fa-city text-cyan text-2xl group-hover:scale-110 transition duration-300"></i>
+            <!-- Service 2 -->
+            <div class="bg-navy-light p-6 rounded-xl border border-slate-700 hover:border-cyan-brand transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-city text-cyan-brand text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Apartment & Multi-Family</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Recurring cleaning for residential building hallways, stairwells, clubhouses, and shared amenities.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Apartment & Multi-Family</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Recurring cleaning for residential building hallways, stairwells, clubhouses, and shared amenities.</p>
-                <a href="services.html" class="inline-flex items-center text-cyan font-semibold text-sm hover:underline">
-                    Learn More <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-2 transition duration-300"></i>
+                <a href="services.html" class="text-cyan-brand font-semibold text-sm inline-flex items-center hover:underline">
+                    Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
 
-            <!-- Card 3: Move-In / Move-Out Turnover -->
-            <div data-aos="fade-up" data-aos-delay="300" class="group bg-navy-light p-8 rounded-xl border border-slate-700 hover:border-cyan/60 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(0,229,255,0.25)] transition-all duration-300">
-                <div class="w-14 h-14 bg-cyan/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan/20 transition duration-300">
-                    <i class="fas fa-key text-cyan text-2xl group-hover:scale-110 transition duration-300"></i>
+            <!-- Service 3 -->
+            <div class="bg-navy-light p-6 rounded-xl border border-slate-700 hover:border-cyan-brand transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-key text-cyan-brand text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Move-In / Move-Out</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Thorough turnover deep cleaning for property managers, landlords, and real estate agents.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Move-In / Move-Out</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Thorough turnover deep cleaning for property managers, landlords, and real estate agents.</p>
-                <a href="services.html" class="inline-flex items-center text-cyan font-semibold text-sm hover:underline">
-                    Learn More <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-2 transition duration-300"></i>
+                <a href="services.html" class="text-cyan-brand font-semibold text-sm inline-flex items-center hover:underline">
+                    Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
 
-            <!-- Card 4: Retail & Showrooms -->
-            <div data-aos="fade-up" data-aos-delay="100" class="group bg-navy-light p-8 rounded-xl border border-slate-700 hover:border-cyan/60 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(0,229,255,0.25)] transition-all duration-300">
-                <div class="w-14 h-14 bg-cyan/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan/20 transition duration-300">
-                    <i class="fas fa-store text-cyan text-2xl group-hover:scale-110 transition duration-300"></i>
+            <!-- Service 4 -->
+            <div class="bg-navy-light p-6 rounded-xl border border-slate-700 hover:border-cyan-brand transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-store text-cyan-brand text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Retail & Showrooms</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Spotless customer-facing spaces, high-traffic floor care, glass surfaces, and display areas.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Retail & Showrooms</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Spotless customer-facing spaces, high-traffic floor care, glass surfaces, and display areas.</p>
-                <a href="services.html" class="inline-flex items-center text-cyan font-semibold text-sm hover:underline">
-                    Learn More <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-2 transition duration-300"></i>
+                <a href="services.html" class="text-cyan-brand font-semibold text-sm inline-flex items-center hover:underline">
+                    Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
 
-            <!-- Card 5: Professional & Medical -->
-            <div data-aos="fade-up" data-aos-delay="200" class="group bg-navy-light p-8 rounded-xl border border-slate-700 hover:border-cyan/60 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(0,229,255,0.25)] transition-all duration-300">
-                <div class="w-14 h-14 bg-cyan/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan/20 transition duration-300">
-                    <i class="fas fa-user-md text-cyan text-2xl group-hover:scale-110 transition duration-300"></i>
+            <!-- Service 5 -->
+            <div class="bg-navy-light p-6 rounded-xl border border-slate-700 hover:border-cyan-brand transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-user-md text-cyan-brand text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Medical & Professional</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">High-standard sanitation and daily maintenance for outpatient clinics, law firms, and banks.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Medical & Professional</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">High-standard sanitation and daily maintenance for outpatient clinics, law firms, and banks.</p>
-                <a href="services.html" class="inline-flex items-center text-cyan font-semibold text-sm hover:underline">
-                    Learn More <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-2 transition duration-300"></i>
+                <a href="services.html" class="text-cyan-brand font-semibold text-sm inline-flex items-center hover:underline">
+                    Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
 
-            <!-- Card 6: Event & Venue Care -->
-            <div data-aos="fade-up" data-aos-delay="300" class="group bg-navy-light p-8 rounded-xl border border-slate-700 hover:border-cyan/60 hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(0,229,255,0.25)] transition-all duration-300">
-                <div class="w-14 h-14 bg-cyan/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan/20 transition duration-300">
-                    <i class="fas fa-calendar-check text-cyan text-2xl group-hover:scale-110 transition duration-300"></i>
+            <!-- Service 6 -->
+            <div class="bg-navy-light p-6 rounded-xl border border-slate-700 hover:border-cyan-brand transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fas fa-calendar-check text-cyan-brand text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Event & Venue Care</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Pre-event preparation and fast-turnaround post-event cleanup for commercial venues and spaces.</p>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-2">Event & Venue Care</h3>
-                <p class="text-slate-400 text-sm mb-6 leading-relaxed">Pre-event preparation and fast-turnaround post-event cleanup for commercial venues and spaces.</p>
-                <a href="services.html" class="inline-flex items-center text-cyan font-semibold text-sm hover:underline">
-                    Learn More <i class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-2 transition duration-300"></i>
+                <a href="services.html" class="text-cyan-brand font-semibold text-sm inline-flex items-center hover:underline">
+                    Learn More <i class="fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
 
         </div>
     </section>
 
-   <!-- CTA Banner -->
-    <section class="bg-cyan py-14 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10" data-aos="zoom-in">
+    <!-- CTA Banner -->
+    <section class="bg-cyan-brand py-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-navy mb-1">Ready to Elevate Your Facility's Cleanliness?</h2>
-                <p class="text-navy/80 font-medium">Get a customized proposal tailored to your property needs within 24 hours.</p>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">Ready to Elevate Your Facility's Cleanliness?</h2>
+                <p class="text-slate-800 font-medium text-sm md:text-base">Get a customized proposal tailored to your property needs within 24 hours.</p>
             </div>
-            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-                <a href="contact.html" class="bg-navy text-white font-bold px-8 py-3.5 rounded-md hover:bg-navy-light transition-all duration-300 shadow-xl hover:scale-105 text-center whitespace-nowrap">
+            <div>
+                <a href="contact.html" class="bg-navy text-white font-bold px-8 py-3.5 rounded-md hover:bg-navy-light transition shadow-xl inline-block text-center whitespace-nowrap">
                     Request Proposal
                 </a>
             </div>
@@ -211,7 +219,7 @@
     <!-- Footer -->
     <footer class="bg-navy-light text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm">
-            <!-- Col 1: Brand Info -->
+            <!-- Col 1 -->
             <div>
                 <div class="flex items-center space-x-2 mb-3">
                     <img src="Logo_top_left.png" alt="KayJay Logo" class="h-8 w-auto object-contain">
@@ -220,59 +228,62 @@
                 <p class="text-xs text-slate-400 mb-4 leading-relaxed">
                     Premier facility & commercial cleaning services serving commercial and residential properties across the Greater Pittsburgh Area.
                 </p>
-                <div class="inline-flex items-center gap-2 text-[11px] bg-navy/60 px-3 py-1.5 rounded-md border border-slate-700/80 text-cyan">
+                <div class="inline-flex items-center gap-2 text-[11px] bg-navy px-3 py-1.5 rounded-md border border-slate-700 text-cyan-brand">
                     <i class="fas fa-shield-alt"></i> Fully Insured & Bonded
                 </div>
             </div>
 
-            <!-- Col 2: Navigation -->
+            <!-- Col 2 -->
             <div>
-                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700/60 pb-2 inline-block">Navigation</h4>
-                <ul class="space-y-2.5 text-xs">
-                    <li><a href="services.html" class="hover:text-cyan transition flex items-center gap-2"><i class="fas fa-chevron-right text-[9px] text-cyan"></i> Services</a></li>
-                    <li><a href="why-us.html" class="hover:text-cyan transition flex items-center gap-2"><i class="fas fa-chevron-right text-[9px] text-cyan"></i> Why KayJay</a></li>
-                    <li><a href="about.html" class="hover:text-cyan transition flex items-center gap-2"><i class="fas fa-chevron-right text-[9px] text-cyan"></i> About Us</a></li>
-                    <li><a href="contact.html" class="hover:text-cyan transition flex items-center gap-2"><i class="fas fa-chevron-right text-[9px] text-cyan"></i> Contact</a></li>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html" class="hover:text-cyan-brand transition">Services</a></li>
+                    <li><a href="why-us.html" class="hover:text-cyan-brand transition">Why KayJay</a></li>
+                    <li><a href="about.html" class="hover:text-cyan-brand transition">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-cyan-brand transition">Contact</a></li>
                 </ul>
             </div>
 
-            <!-- Col 3: Core Services -->
+            <!-- Col 3 -->
             <div>
-                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700/60 pb-2 inline-block">Our Services</h4>
-                <ul class="space-y-2.5 text-xs">
-                    <li><a href="services.html" class="hover:text-cyan transition">Office & Corporate Cleaning</a></li>
-                    <li><a href="services.html" class="hover:text-cyan transition">Apartment & Multi-Family</a></li>
-                    <li><a href="services.html" class="hover:text-cyan transition">Move-In / Move-Out Turnover</a></li>
-                    <li><a href="services.html" class="hover:text-cyan transition">Retail & Showroom Care</a></li>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Our Services</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html" class="hover:text-cyan-brand transition">Office & Corporate Cleaning</a></li>
+                    <li><a href="services.html" class="hover:text-cyan-brand transition">Apartment & Multi-Family</a></li>
+                    <li><a href="services.html" class="hover:text-cyan-brand transition">Move-In / Move-Out Turnover</a></li>
+                    <li><a href="services.html" class="hover:text-cyan-brand transition">Retail & Showroom Care</a></li>
                 </ul>
             </div>
 
-            <!-- Col 4: Contact -->
+            <!-- Col 4 -->
             <div>
-                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700/60 pb-2 inline-block">Service Area</h4>
-                <div class="space-y-3 text-xs">
-                    <p class="flex items-start gap-2.5">
-                        <i class="fas fa-map-marker-alt text-cyan mt-0.5"></i>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Service Area</h4>
+                <div class="space-y-2.5 text-xs">
+                    <p class="flex items-start gap-2">
+                        <i class="fas fa-map-marker-alt text-cyan-brand mt-0.5"></i>
                         <span>Greater Pittsburgh Region, PA</span>
                     </p>
-                    <p class="flex items-center gap-2.5">
-                        <i class="fas fa-envelope text-cyan"></i>
-                        <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan transition">info@kayjaycleaning.com</a>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-cyan-brand"></i>
+                        <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan-brand transition">info@kayjaycleaning.com</a>
                     </p>
-                    <p class="flex items-center gap-2.5 text-slate-400">
-                        <i class="fas fa-clock text-cyan"></i>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-clock text-cyan-brand"></i>
                         <span>24/7 Flexible Scheduling</span>
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-slate-800/80 text-xs text-center text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-slate-800 text-xs text-center text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
                 &copy; 2026 KayJay Cleaning Services LLC. All rights reserved.
             </div>
-            <div class="text-[11px] text-slate-400">
+            <div class="text-[11px] text-slate-400 italic">
                 "Clean Means Business"
             </div>
         </div>
     </footer>
+
+</body>
+</html>
