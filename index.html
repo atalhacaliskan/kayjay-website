@@ -21,18 +21,20 @@
         .bg-cyan-brand { background-color: #00E5FF; }
         .text-cyan-brand { color: #00E5FF; }
         
-        /* Guaranteed Smooth Hover Animations */
+        /* 🔥 GLOW & FLOATING HOVER EFFECTS 🔥 */
         .service-card {
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.6s ease;
+            will-change: transform, box-shadow, opacity;
         }
         .service-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-8px) !important;
             border-color: #00E5FF;
-            box-shadow: 0 12px 30px -10px rgba(0, 229, 255, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.35), 0 0 15px 0 rgba(0, 229, 255, 0.15);
         }
         .service-card:hover .card-icon {
-            transform: scale(1.12);
-            background-color: rgba(0, 229, 255, 0.2);
+            transform: scale(1.15);
+            background-color: rgba(0, 229, 255, 0.25);
+            color: #ffffff;
         }
         .service-card:hover .card-arrow {
             transform: translateX(6px);
@@ -41,13 +43,24 @@
             transition: all 0.3s ease;
         }
 
-        /* Ambient Glow Blob Animation */
+        /* Ambient Background Glow */
         @keyframes pulseGlow {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.08); }
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.08); }
         }
         .animate-glow {
             animation: pulseGlow 6s infinite ease-in-out;
+        }
+
+        /* 📜 SCROLL ANIMATION STYLES 📜 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -96,11 +109,11 @@
 
     <!-- Hero Section -->
     <section class="relative py-16 md:py-24 bg-navy border-b border-slate-800 overflow-hidden">
-        <!-- Ambient Glow Effect -->
+        <!-- Background Glow -->
         <div class="absolute -top-20 -left-20 w-96 h-96 bg-cyan-brand/10 rounded-full blur-3xl pointer-events-none animate-glow"></div>
 
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div>
+            <div class="reveal">
                 <span class="bg-cyan-brand/10 text-cyan-brand text-xs font-semibold px-3 py-1 rounded-full border border-cyan-brand/30 uppercase tracking-wider inline-block mb-4">
                     Commercial & Multi-Family Solutions
                 </span>
@@ -112,7 +125,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold px-8 py-3.5 rounded-md text-center hover:bg-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-brand/20 hover:-translate-y-0.5">
-                        Schedule a Free Consultation
+                        Get a Free Quote
                     </a>
                     <a href="services.html" class="border border-slate-600 text-white font-semibold px-8 py-3.5 rounded-md text-center hover:bg-slate-800 transition duration-300">
                         Explore Services
@@ -121,7 +134,7 @@
             </div>
             
             <!-- Trust Card -->
-            <div class="bg-navy-light p-8 rounded-2xl border border-slate-700 shadow-xl relative overflow-hidden transition-all duration-300 hover:border-slate-500">
+            <div class="reveal bg-navy-light p-8 rounded-2xl border border-slate-700 shadow-xl relative overflow-hidden transition-all duration-300 hover:border-slate-500">
                 <div class="absolute top-0 left-0 w-2 h-full bg-cyan-brand"></div>
                 <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
                     <i class="fas fa-award text-cyan-brand"></i> Why Property Managers Trust Us
@@ -136,9 +149,9 @@
         </div>
     </section>
 
-    <!-- Core Services Section (Animated 6-Grid) -->
+    <!-- Core Services Section -->
     <section class="py-16 max-w-7xl mx-auto px-4 flex-grow">
-        <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="reveal text-center max-w-3xl mx-auto mb-12">
             <h2 class="text-3xl font-extrabold text-white mb-3">Core Commercial Services</h2>
             <p class="text-slate-400 text-sm md:text-base">Tailored, reliable janitorial programs for commercial and residential properties.</p>
         </div>
@@ -146,7 +159,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <!-- Service 1 -->
-            <div class="service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
+            <div class="reveal service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
                 <div>
                     <div class="card-icon w-14 h-14 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-building text-cyan-brand text-2xl"></i>
@@ -160,7 +173,7 @@
             </div>
 
             <!-- Service 2 -->
-            <div class="service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
+            <div class="reveal service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
                 <div>
                     <div class="card-icon w-14 h-14 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-city text-cyan-brand text-2xl"></i>
@@ -174,7 +187,7 @@
             </div>
 
             <!-- Service 3 -->
-            <div class="service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
+            <div class="reveal service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
                 <div>
                     <div class="card-icon w-14 h-14 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-key text-cyan-brand text-2xl"></i>
@@ -188,7 +201,7 @@
             </div>
 
             <!-- Service 4 -->
-            <div class="service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
+            <div class="reveal service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
                 <div>
                     <div class="card-icon w-14 h-14 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-store text-cyan-brand text-2xl"></i>
@@ -202,7 +215,7 @@
             </div>
 
             <!-- Service 5 -->
-            <div class="service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
+            <div class="reveal service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
                 <div>
                     <div class="card-icon w-14 h-14 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-user-md text-cyan-brand text-2xl"></i>
@@ -216,7 +229,7 @@
             </div>
 
             <!-- Service 6 -->
-            <div class="service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
+            <div class="reveal service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
                 <div>
                     <div class="card-icon w-14 h-14 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-6">
                         <i class="fas fa-calendar-check text-cyan-brand text-2xl"></i>
@@ -233,15 +246,15 @@
     </section>
 
     <!-- CTA Banner -->
-    <section class="bg-cyan-brand py-12">
+    <section class="reveal bg-cyan-brand py-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">Ready to Elevate Your Facility's Cleanliness?</h2>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">Ready for a Spotless Commercial Space?</h2>
                 <p class="text-slate-800 font-medium text-sm md:text-base">Get a free, custom quote tailored to your facility within 24 hours — no commitment required.</p>
             </div>
             <div>
                 <a href="contact.html" class="bg-navy text-white font-bold px-8 py-3.5 rounded-md hover:bg-navy-light transition duration-300 shadow-xl inline-block text-center whitespace-nowrap hover:scale-105">
-                    Get a Free Quote
+                    Get Your Free Quote
                 </a>
             </div>
         </div>
@@ -315,6 +328,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- 📜 Scroll Animation Script (Intersection Observer) 📜 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Kademeli geliş efekti (Stagger)
+                        setTimeout(() => {
+                            entry.target.classList.add("active");
+                        }, 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach(reveal => {
+                observer.observe(reveal);
+            });
+        });
+    </script>
 
 </body>
 </html>
