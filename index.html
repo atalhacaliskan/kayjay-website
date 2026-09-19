@@ -55,18 +55,25 @@
         /* 📜 SCROLL ANIMATION STYLES 📜 */
 .reveal {
     opacity: 0;
-    transform: translateY(60px) scale(0.92);
-    filter: blur(4px); /* Hafif flu gelip netleşme etkisi */
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(40px) scale(0.96);
+    filter: blur(2px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform, filter;
 }
 
 .reveal.active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    filter: blur(0) !important;
+}
+
+        /* 🛡️ Güvenlik Önlemi: JS Desteği Yoksa veya Hata Oluşursa Sayfa Boş Kalmasın */
+no-js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
 }
 
         /* FAQ Accordion Styling */
