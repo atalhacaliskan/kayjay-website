@@ -1,1 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — KayJay Cleaning Services LLC</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo_top_left.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Smooth Scroll & Base Colors */
+        html { scroll-behavior: smooth; }
+        .bg-navy { background-color: #0F172A; }
+        .bg-navy-light { background-color: #1E293B; }
+        .bg-cyan-brand { background-color: #00E5FF; }
+        .text-cyan-brand { color: #00E5FF; }
+        
+        /* Cards & Glow */
+        .contact-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-4px);
+            border-color: #00E5FF;
+            box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.25);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.08); }
+        }
+        .animate-glow {
+            animation: pulseGlow 6s infinite ease-in-out;
+        }
+
+        /* 📜 KESİNTİSİZ SCROLL ANIMATION 📜 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body class="bg-navy text-slate-100 font-sans antialiased min-h-screen flex flex-col pb-16 md:pb-0">
+
+    <!-- Top Bar -->
+    <div class="bg-[#0b1836] text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span><i class="fas fa-shield-alt text-cyan-brand mr-2"></i>Fully Insured & Bonded</span>
+                <span class="hidden md:inline"><i class="fas fa-check-circle text-cyan-brand mr-2"></i>Flexible Scheduling Available</span>
+            </div>
+            <div>
+                <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan-brand transition flex items-center gap-1.5">
+                    <i class="fas fa-envelope text-cyan-brand"></i> info@kayjaycleaning.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-navy-light/95 sticky top-0 z-50 shadow-lg border-b border-slate-700/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="Logo_top_left.png" alt="KayJay Logo" class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <div class="flex flex-col justify-center">
+                    <span class="text-xl font-bold tracking-wider text-white leading-none flex items-baseline">
+                        KAYJAY
+                    </span>
+                    <span class="text-[9px] tracking-widest text-cyan-brand uppercase font-medium mt-1">Facility & Commercial Cleaning</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="services.html" class="hover:text-cyan-brand transition duration-200">Services</a>
+                <a href="why-us.html" class="hover:text-cyan-brand transition duration-200">Why KayJay</a>
+                <a href="about.html" class="hover:text-cyan-brand transition duration-200">About Us</a>
+                <a href="contact.html" class="text-cyan-brand transition duration-200 font-bold">Contact</a>
+            </div>
+
+            <div class="hidden lg:block border-l border-slate-700 pl-6">
+                <span class="text-sm font-semibold tracking-widest text-cyan-brand uppercase italic">
+                    "Clean Means Business"
+                </span>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Navigation">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light border-b border-slate-700 px-4 pt-2 pb-4 space-y-3 text-sm font-medium">
+            <a href="services.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">Services</a>
+            <a href="why-us.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">Why KayJay</a>
+            <a href="about.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">About Us</a>
+            <a href="contact.html" class="block text-cyan-brand font-bold py-1">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero / Header Banner -->
+    <section class="relative py-16 md:py-20 bg-navy border-b border-slate-800 overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-cyan-brand/10 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <span class="bg-cyan-brand/10 text-cyan-brand text-xs font-semibold px-3 py-1 rounded-full border border-cyan-brand/30 uppercase tracking-wider inline-block mb-4">
+                Get In Touch
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Request a Proposal & Consultation</h1>
+            <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                Connect with our team for customized commercial cleaning, facility maintenance, and move-in/out turnover solutions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-12 gap-12">
+            
+            <!-- Left Info Panel (5 Columns) -->
+            <div class="lg:col-span-5 space-y-8">
+                
+                <div class="reveal space-y-3">
+                    <span class="text-cyan-brand font-bold text-xs uppercase tracking-widest block">Direct Reach</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-white">Let's Discuss Your Facility Needs</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Whether you need routine janitorial care, multi-family unit turnover, or emergency venue cleaning, our field supervisors respond promptly.
+                    </p>
+                </div>
+
+                <!-- Contact Info Cards -->
+                <div class="space-y-4">
+                    
+                    <!-- Email Card -->
+                    <div class="reveal contact-card bg-navy-light p-5 rounded-xl border border-slate-700/80 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fas fa-envelope text-cyan-brand text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 text-xs font-medium block">Email Address</span>
+                            <a href="mailto:info@kayjaycleaning.com" class="text-white font-bold text-sm md:text-base hover:text-cyan-brand transition">
+                                info@kayjaycleaning.com
+                            </a>
+                            <span class="text-[11px] text-slate-400 block mt-1">Response within 24 hours guaranteed</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Coverage Card -->
+                    <div class="reveal contact-card bg-navy-light p-5 rounded-xl border border-slate-700/80 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fas fa-map-marker-alt text-cyan-brand text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 text-xs font-medium block">Primary Service Area</span>
+                            <span class="text-white font-bold text-sm md:text-base block">
+                                Greater Pittsburgh & Surrounding Region, PA
+                            </span>
+                            <span class="text-[11px] text-slate-400 block mt-1">On-site walk-throughs available upon request</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Hours Card -->
+                    <div class="reveal contact-card bg-navy-light p-5 rounded-xl border border-slate-700/80 flex items-start gap-4">
+                        <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fas fa-clock text-cyan-brand text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 text-xs font-medium block">Operational Hours</span>
+                            <span class="text-white font-bold text-sm md:text-base block">
+                                24/7 Custom Shift Scheduling
+                            </span>
+                            <span class="text-[11px] text-slate-400 block mt-1">After-hours, overnight, and weekend availability</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Social Media Channels Section -->
+                <div class="reveal bg-navy-light/60 p-6 rounded-xl border border-slate-800 space-y-4">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                        <i class="fas fa-share-alt text-cyan-brand"></i> Connect With Us
+                    </h3>
+                    <p class="text-xs text-slate-400">
+                        Follow our official channels for project updates, facility maintenance insights, and company announcements.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-navy hover:bg-cyan-brand hover:text-navy text-slate-300 rounded-lg border border-slate-700 flex items-center justify-center transition duration-300" title="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-navy hover:bg-cyan-brand hover:text-navy text-slate-300 rounded-lg border border-slate-700 flex items-center justify-center transition duration-300" title="LinkedIn">
+                            <i class="fab fa-linkedin-in text-lg"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-navy hover:bg-cyan-brand hover:text-navy text-slate-300 rounded-lg border border-slate-700 flex items-center justify-center transition duration-300" title="Facebook">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-navy hover:bg-cyan-brand hover:text-navy text-slate-300 rounded-lg border border-slate-700 flex items-center justify-center transition duration-300" title="X (Twitter)">
+                            <i class="fab fa-x-twitter text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Contact Form (7 Columns) -->
+            <div class="reveal lg:col-span-7 bg-navy-light p-8 rounded-2xl border border-slate-700/80 shadow-2xl relative">
+                <div class="mb-6 border-b border-slate-700 pb-4">
+                    <h3 class="text-xl font-bold text-white mb-1">Request a Fast Service Quote</h3>
+                    <p class="text-xs text-slate-400">Fill out the details below and our team will prepare an itemized proposal for your space.</p>
+                </div>
+
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for your message! Our team will get back to you shortly.');" class="space-y-4">
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name *</label>
+                            <input type="text" required placeholder="e.g. John Doe" class="w-full bg-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-brand transition">
+                        </div>
+
+                        <!-- Company / Organization -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Company / Property *</label>
+                            <input type="text" required placeholder="e.g. Apex Management" class="w-full bg-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-brand transition">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Work Email -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address *</label>
+                            <input type="email" required placeholder="john@company.com" class="w-full bg-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-brand transition">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Phone Number</label>
+                            <input type="tel" placeholder="(412) 555-0199" class="w-full bg-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-brand transition">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Primary Service Required -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Service Type *</label>
+                            <select required class="w-full bg-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-brand transition">
+                                <option value="">Select Service Needed...</option>
+                                <option value="office">Office & Corporate Cleaning</option>
+                                <option value="apartment">Apartment & Multi-Family Common Areas</option>
+                                <option value="turnover">Move-In / Move-Out Turnover</option>
+                                <option value="retail">Retail & Showroom Maintenance</option>
+                                <option value="medical">Medical & Professional Suites</option>
+                                <option value="event">Post-Event / Venue Care</option>
+                                <option value="other">Other Commercial Facility Needs</option>
+                            </select>
+                        </div>
+
+                        <!-- Cleaning Frequency -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Frequency</label>
+                            <select class="w-full bg-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-brand transition">
+                                <option value="recurring">Daily / Multiple Times per Week</option>
+                                <option value="weekly">Weekly Cleaning</option>
+                                <option value="biweekly">Bi-Weekly Cleaning</option>
+                                <option value="onetime">One-Time / Deep Turnover Clean</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Facility Size / Notes -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Facility Details & Scope *</label>
+                        <textarea rows="4" required placeholder="Please describe your facility square footage, location area, preferred cleaning hours, and any specific requirements..." class="w-full bg-navy border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-brand transition"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-cyan-brand text-slate-900 font-extrabold py-3.5 rounded-lg hover:bg-cyan-300 transition duration-300 shadow-xl flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i> Submit Proposal Request
+                    </button>
+
+                    <p class="text-[11px] text-slate-400 text-center mt-2">
+                        <i class="fas fa-lock text-cyan-brand mr-1"></i> Your details are confidential and used solely for providing your service estimate.
+                    </p>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-light text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm">
+            <!-- Col 1 -->
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <img src="Logo_top_left.png" alt="KayJay Logo" class="h-14 w-auto object-contain">
+                    <span class="text-xl font-bold text-white tracking-wider">KAYJAY CELANING SERVICES</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                    Premier facility & commercial cleaning services serving commercial and residential properties.
+                </p>
+                <div class="inline-flex items-center gap-2 text-[11px] bg-navy px-3 py-1.5 rounded-md border border-slate-700 text-cyan-brand">
+                    <i class="fas fa-shield-alt"></i> Fully Insured & Bonded
+                </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html" class="hover:text-cyan-brand transition">Services</a></li>
+                    <li><a href="why-us.html" class="hover:text-cyan-brand transition">Why KayJay</a></li>
+                    <li><a href="about.html" class="hover:text-cyan-brand transition">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-cyan-brand transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Our Services</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html#office" class="hover:text-cyan-brand transition">Office & Corporate Cleaning</a></li>
+                    <li><a href="services.html#apartment" class="hover:text-cyan-brand transition">Apartment & Multi-Family</a></li>
+                    <li><a href="services.html#turnover" class="hover:text-cyan-brand transition">Move-In / Move-Out Turnover</a></li>
+                    <li><a href="services.html#retail" class="hover:text-cyan-brand transition">Retail & Showroom Care</a></li>
+                    <li><a href="services.html#medical" class="hover:text-cyan-brand transition">Medical & Professional Suites</a></li>
+                    <li><a href="services.html#event" class="hover:text-cyan-brand transition">Event & Venue Care</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Service Hours & Contact</h4>
+                <div class="space-y-2.5 text-xs">
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-cyan-brand"></i>
+                        <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan-brand transition">info@kayjaycleaning.com</a>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-clock text-cyan-brand"></i>
+                        <span>Tailored After-Hours & Weekend Shifts</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-shield-alt text-cyan-brand"></i>
+                        <span>Commercial Facility Care</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-slate-800 text-xs text-center text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                &copy; 2026 KayJay Cleaning Services LLC. All rights reserved.
+            </div>
+            <div class="text-[11px] text-slate-400 italic">
+                "Clean Means Business"
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Bottom CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-navy-light/95 border-t border-slate-700 p-3 z-50 flex items-center justify-between backdrop-blur-md">
+        <span class="text-xs text-slate-300 font-medium">Need Commercial Cleaning?</span>
+        <a href="mailto:info@kayjaycleaning.com" class="bg-cyan-brand text-slate-900 text-xs font-bold px-4 py-2 rounded shadow">
+            Email Us
+        </a>
+    </div>
+
+    <!-- 📜 SCRIPTS 📜 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // 📜 HER SCROLL'DA TEKRARLAYAN ANIMASYON
+            const reveals = document.querySelectorAll(".reveal");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px 0px -50px 0px",
+                threshold: 0.05
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    } else {
+                        entry.target.classList.remove("active");
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach((reveal) => {
+                observer.observe(reveal);
+            });
+
+            // Yüklenme anında görünürlük garantisi
+            setTimeout(() => {
+                reveals.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 50);
+        });
+    </script>
+
+</body>
+</html>
