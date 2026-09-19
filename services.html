@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services — KayJay Commercial Cleaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { DEFAULT: '#0F172A', light: '#1E293B' },
+                        cyan: { DEFAULT: '#00E5FF', dark: '#00B8D4' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-navy text-slate-100 font-sans antialiased">
 
+    <!-- Top Bar -->
+    <div class="bg-navy text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fas fa-shield-alt text-cyan mr-2"></i>Fully Insured & Bonded</span>
+                <span class="hidden md:inline"><i class="fas fa-map-marker-alt text-cyan mr-2"></i>Greater Pittsburgh Area, PA</span>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-navy-light text-white sticky top-0 z-50 shadow-lg border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="Logo_top_left.png" alt="KayJay Logo" class="h-10 w-auto object-contain">
+                <div class="flex flex-col justify-center">
+                    <span class="text-xl font-bold tracking-wider text-white leading-none flex items-baseline">
+                        KAYJA<span class="translate-y-1 inline-block">J</span>
+                    </span>
+                    <span class="text-[9px] tracking-widest text-cyan uppercase font-medium mt-1">Facility & Commercial Cleaning</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="services.html" class="text-cyan font-bold border-b-2 border-cyan pb-1">Services</a>
+                <a href="why-us.html" class="hover:text-cyan transition">Why KayJay</a>
+                <a href="about.html" class="hover:text-cyan transition">About Us</a>
+                <a href="contact.html" class="hover:text-cyan transition">Contact</a>
+            </div>
+            <a href="contact.html" class="bg-cyan text-navy font-bold px-5 py-2.5 rounded-md hover:bg-cyan-400 transition text-sm shadow-md">
+                Get a Quote
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <section class="py-16 bg-navy-light border-b border-slate-800 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Commercial Cleaning Services</h1>
+            <p class="text-slate-300 text-lg">High-standard janitorial and facility maintenance tailored for commercial spaces across Pittsburgh.</p>
+        </div>
+    </section>
+
+    <!-- Services Content Section -->
+    <section class="py-20 max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-navy-light p-8 rounded-xl border border-slate-700">
+                <i class="fas fa-building text-cyan text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Office & Corporate Cleaning</h3>
+                <p class="text-slate-400 text-sm">Daily, weekly, or custom cleaning schedules to keep your office professional and hygienic.</p>
+            </div>
+            <div class="bg-navy-light p-8 rounded-xl border border-slate-700">
+                <i class="fas fa-industry text-cyan text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Industrial & Facility Cleaning</h3>
+                <p class="text-slate-400 text-sm">Heavy-duty janitorial solutions for warehouses, manufacturing plants, and industrial complexes.</p>
+            </div>
+            <div class="bg-navy-light p-8 rounded-xl border border-slate-700">
+                <i class="fas fa-broom text-cyan text-3xl mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Post-Construction Cleanup</h3>
+                <p class="text-slate-400 text-sm">Detailed debris removal, dust control, and final polish for new builds and renovations.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
