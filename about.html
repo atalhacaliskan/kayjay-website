@@ -126,12 +126,35 @@
         </div>
     </section>
 
-    <!-- Founder's Story & Origin Section -->
+    <!-- Founder's Story & Profile Section -->
     <section class="py-16 max-w-7xl mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
             
-            <!-- Left: Hikaye & Kuruluş Amacı -->
-            <div class="reveal space-y-6">
+            <!-- Left: Kurucu Fotoğrafı & Unvan Kartı (5 Kolon) -->
+            <div class="reveal md:col-span-5 relative">
+                <div class="relative mx-auto max-w-md bg-navy-light p-3 rounded-2xl border border-slate-700/80 shadow-2xl overflow-hidden group">
+                    <!-- Glow & Frame Accent -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent z-10 rounded-2xl pointer-events-none"></div>
+                    
+                    <!-- Fotoğraf Alanı -->
+                    <div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-slate-800">
+                        <img src="founder-photo.jpg" alt="Founder & CEO - KayJay Cleaning Services" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                    </div>
+
+                    <!-- Fotoğraf Altı Bilgi Kutusu -->
+                    <div class="relative z-20 -mt-12 bg-navy/90 backdrop-blur-md p-4 rounded-xl border border-slate-700/80 text-center shadow-lg mx-2">
+                        <h3 class="text-lg font-bold text-white tracking-wide">KayJay Leadership</h3>
+                        <p class="text-xs text-cyan-brand font-semibold uppercase tracking-wider mt-0.5">Founder & Operations Principal</p>
+                        <div class="mt-2 pt-2 border-t border-slate-800 flex justify-center gap-3 text-xs text-slate-400">
+                            <span><i class="fas fa-shield-alt text-cyan-brand mr-1"></i> Field Supervised</span>
+                            <span><i class="fas fa-check-circle text-cyan-brand mr-1"></i> Quality Assured</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Hikaye & Kuruluş Amacı (7 Kolon) -->
+            <div class="reveal md:col-span-7 space-y-6">
                 <div class="inline-flex items-center gap-2 text-cyan-brand text-xs font-bold uppercase tracking-wider bg-cyan-brand/10 px-3 py-1 rounded border border-cyan-brand/20">
                     <i class="fas fa-history"></i> Our Story & Mission
                 </div>
@@ -147,26 +170,23 @@
                 <p class="text-slate-400 text-sm leading-relaxed">
                     We brought together a dedicated, fully vetted team and structured every service around detailed site-specific checklists, reliable communication, and complete insurance coverage.
                 </p>
-            </div>
 
-            <!-- Right: Kurumsal Vurgu Kartı -->
-            <div class="reveal bg-navy-light p-8 rounded-2xl border border-slate-700/80 shadow-xl space-y-6">
-                <div class="border-b border-slate-700 pb-4">
-                    <span class="text-cyan-brand font-bold text-xs uppercase tracking-widest block mb-1">Our Core Vision</span>
-                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                        <i class="fas fa-quote-left text-cyan-brand"></i> "Clean Means Business"
-                    </h3>
+                <!-- Alıntı Kartı -->
+                <div class="bg-navy-light p-5 rounded-xl border-l-4 border-cyan-brand border-y border-r border-slate-700/80 space-y-2 mt-4">
+                    <p class="text-slate-300 text-xs md:text-sm italic">
+                        "We built KayJay on a simple promise: deliver reliable, top-quality cleaning every time without excuses. Every property we care for is treated with maximum attention to detail and respect."
+                    </p>
+                    <div class="text-right">
+                        <span class="text-xs font-bold text-cyan-brand tracking-wider uppercase">— Founder's Statement</span>
+                    </div>
                 </div>
-                <p class="text-slate-300 text-xs md:text-sm leading-relaxed italic">
-                    "We built KayJay on a simple promise: deliver reliable, top-quality cleaning every time without excuses. Every property we care for is treated with maximum attention to detail and respect."
-                </p>
 
-                <div class="pt-4 border-t border-slate-700/80 grid grid-cols-2 gap-4 text-xs">
-                    <div class="bg-navy p-3 rounded-lg border border-slate-800">
+                <div class="pt-2 grid grid-cols-2 gap-4 text-xs">
+                    <div class="bg-navy-light p-3 rounded-lg border border-slate-700/80">
                         <span class="block text-cyan-brand font-extrabold text-lg">100%</span>
                         <span class="text-slate-400">Insured & Bonded</span>
                     </div>
-                    <div class="bg-navy p-3 rounded-lg border border-slate-800">
+                    <div class="bg-navy-light p-3 rounded-lg border border-slate-700/80">
                         <span class="block text-cyan-brand font-extrabold text-lg">Checklist</span>
                         <span class="text-slate-400">Driven Quality Audits</span>
                     </div>
