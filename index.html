@@ -53,15 +53,21 @@
         }
 
         /* 📜 SCROLL ANIMATION STYLES 📜 */
-        .reveal {
-            opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.reveal {
+    opacity: 0;
+    transform: translateY(60px) scale(0.92);
+    filter: blur(4px); /* Hafif flu gelip netleşme etkisi */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
 
         /* FAQ Accordion Styling */
         details[open] summary i {
@@ -424,39 +430,49 @@
 
     <!-- 📜 Scripts 📜 -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Mobile Menu Toggle
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
+       document.addEventListener("DOMContentLoaded", function() {
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-            if (mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Scroll Animation (Staggered Intersection Observer)
-            const reveals = document.querySelectorAll(".reveal");
-
-            const observerOptions = {
-                root: null,
-                rootMargin: "0px 0px -50px 0px",
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("active");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            reveals.forEach((reveal) => {
-                observer.observe(reveal);
-            });
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
+    }
+
+    // 📜 Kademeli & Belirgin Scroll Animation (Stagger Effect)
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -80px 0px", // Eleman ekranın biraz içine girince tetiklenir
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Aynı anda ekrana giren elemanları sırayla açmak için delay ekliyoruz
+                const parentGrid = entry.target.parentElement;
+                if (parentGrid && parentGrid.classList.contains('grid')) {
+                    const siblings = Array.from(parentGrid.children).filter(child => child.classList.contains('reveal'));
+                    const index = siblings.indexOf(entry.target);
+                    if (index !== -1) {
+                        entry.target.style.transitionDelay = `${index * 120}ms`;
+                    }
+                }
+
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    reveals.forEach((reveal) => {
+        observer.observe(reveal);
+    });
+});
     </script>
 
 </body>
