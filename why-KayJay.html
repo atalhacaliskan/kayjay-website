@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why KayJay — Commercial Cleaning Standards</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo_top_left.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Smooth Scroll & Base Colors */
+        html { scroll-behavior: smooth; }
+        .bg-navy { background-color: #0F172A; }
+        .bg-navy-light { background-color: #1E293B; }
+        .bg-cyan-brand { background-color: #00E5FF; }
+        .text-cyan-brand { color: #00E5FF; }
+        
+        /* Advantage Cards & Glow */
+        .advantage-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .advantage-card:hover {
+            transform: translateY(-6px);
+            border-color: #00E5FF;
+            box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.3);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.08); }
+        }
+        .animate-glow {
+            animation: pulseGlow 6s infinite ease-in-out;
+        }
+
+        /* 📜 KESİNTİSİZ SCROLL ANIMATION 📜 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body class="bg-navy text-slate-100 font-sans antialiased min-h-screen flex flex-col pb-16 md:pb-0">
+
+    <!-- Top Bar -->
+    <div class="bg-[#0b1836] text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span><i class="fas fa-shield-alt text-cyan-brand mr-2"></i>Fully Insured & Bonded</span>
+                <span class="hidden md:inline"><i class="fas fa-check-circle text-cyan-brand mr-2"></i>Flexible Scheduling Available</span>
+            </div>
+            <div>
+                <a href="contact.html" class="hover:text-cyan-brand transition flex items-center gap-1.5">
+                    <i class="fas fa-envelope text-cyan-brand"></i> info@kayjaycleaning.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-navy-light/95 sticky top-0 z-50 shadow-lg border-b border-slate-700/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="Logo_top_left.png" alt="KayJay Logo" class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <div class="flex flex-col justify-center">
+                    <span class="text-xl font-bold tracking-wider text-white leading-none flex items-baseline">
+                        KAYJAY
+                    </span>
+                    <span class="text-[9px] tracking-widest text-cyan-brand uppercase font-medium mt-1">Facility & Commercial Cleaning</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="services.html" class="hover:text-cyan-brand transition duration-200">Services</a>
+                <a href="why-us.html" class="text-cyan-brand transition duration-200 font-bold">Why KayJay</a>
+                <a href="about.html" class="hover:text-cyan-brand transition duration-200">About Us</a>
+                <a href="contact.html" class="hover:text-cyan-brand transition duration-200">Contact</a>
+            </div>
+
+            <div class="hidden lg:block border-l border-slate-700 pl-6">
+                <span class="text-sm font-semibold tracking-widest text-cyan-brand uppercase italic">
+                    "Clean Means Business"
+                </span>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Navigation">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light border-b border-slate-700 px-4 pt-2 pb-4 space-y-3 text-sm font-medium">
+            <a href="services.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">Services</a>
+            <a href="why-us.html" class="block text-cyan-brand font-bold py-1 border-b border-slate-800">Why KayJay</a>
+            <a href="about.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">About Us</a>
+            <a href="contact.html" class="block hover:text-cyan-brand py-1">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero / Header Banner -->
+    <section class="relative py-16 md:py-20 bg-navy border-b border-slate-800 overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-cyan-brand/10 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <span class="bg-cyan-brand/10 text-cyan-brand text-xs font-semibold px-3 py-1 rounded-full border border-cyan-brand/30 uppercase tracking-wider inline-block mb-4">
+                The Commercial Advantage
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Why Partner With KayJay</h1>
+            <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                We combine structured operational management with uncompromising quality control to protect your property investment and corporate reputation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Core Value Pillars Grid -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+        <div class="reveal text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">Built for Commercial Excellence</h2>
+            <p class="text-slate-400 text-sm">Four pillars that set our facility maintenance standard apart from traditional cleaners.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Pillar 1 -->
+            <div class="reveal advantage-card bg-navy-light p-6 rounded-xl border border-slate-700/80">
+                <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                    <i class="fas fa-user-shield text-cyan-brand text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Vetted & Insured Staff</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Background-checked, rigorously trained technicians. Fully insured and bonded to give property managers total peace of mind.
+                </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="reveal advantage-card bg-navy-light p-6 rounded-xl border border-slate-700/80">
+                <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                    <i class="fas fa-tasks text-cyan-brand text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Itemized Checklist Inspections</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    We don't guess. Every walkthrough follows a strict, site-specific checklist audited regularly by field supervisors.
+                </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="reveal advantage-card bg-navy-light p-6 rounded-xl border border-slate-700/80">
+                <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                    <i class="fas fa-clock text-cyan-brand text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Flexible Shift Options</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Early morning, late night, or weekend shifts tailored specifically so your business or tenants experience zero downtime.
+                </p>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="reveal advantage-card bg-navy-light p-6 rounded-xl border border-slate-700/80">
+                <div class="w-12 h-12 bg-cyan-brand/10 rounded-lg flex items-center justify-center mb-5">
+                    <i class="fas fa-headset text-cyan-brand text-xl"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Responsive Support</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                    Direct access to account managers for fast schedule adjustments, special requests, or immediate turnover dispatch.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="py-16 bg-navy-light/40 border-t border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="reveal text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">The Clear Difference</h2>
+                <p class="text-slate-400 text-sm">How KayJay compares to standard janitorial vendors.</p>
+            </div>
+
+            <div class="reveal overflow-x-auto">
+                <table class="w-full text-left text-sm border-collapse rounded-xl overflow-hidden shadow-xl">
+                    <thead>
+                        <tr class="bg-navy-light text-slate-200 border-b border-slate-700">
+                            <th class="p-4 md:p-5 font-bold">Feature / Standard</th>
+                            <th class="p-4 md:p-5 font-bold text-cyan-brand bg-cyan-brand/10">KayJay Cleaning Services</th>
+                            <th class="p-4 md:p-5 font-bold text-slate-400">Standard Cleaners</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-xs md:text-sm text-slate-300">
+                        <tr class="hover:bg-navy-light/30">
+                            <td class="p-4 font-semibold text-white">Proof of Insurance & COI Provision</td>
+                            <td class="p-4 font-bold text-cyan-brand bg-cyan-brand/5"><i class="fas fa-check-circle mr-2"></i>Immediate COI Issued</td>
+                            <td class="p-4 text-slate-400"><i class="fas fa-times-circle mr-2 text-red-400"></i>Often Delayed or Limited</td>
+                        </tr>
+                        <tr class="hover:bg-navy-light/30">
+                            <td class="p-4 font-semibold text-white">Quality Assurance & Inspections</td>
+                            <td class="p-4 font-bold text-cyan-brand bg-cyan-brand/5"><i class="fas fa-check-circle mr-2"></i>Routine Supervisor Audits</td>
+                            <td class="p-4 text-slate-400"><i class="fas fa-times-circle mr-2 text-red-400"></i>Unsupervised Crews</td>
+                        </tr>
+                        <tr class="hover:bg-navy-light/30">
+                            <td class="p-4 font-semibold text-white">Tailored Commercial Checklists</td>
+                            <td class="p-4 font-bold text-cyan-brand bg-cyan-brand/5"><i class="fas fa-check-circle mr-2"></i>Custom Site Specifications</td>
+                            <td class="p-4 text-slate-400"><i class="fas fa-times-circle mr-2 text-red-400"></i>Generic Surface Cleaning</td>
+                        </tr>
+                        <tr class="hover:bg-navy-light/30">
+                            <td class="p-4 font-semibold text-white">Proposal Turnaround Time</td>
+                            <td class="p-4 font-bold text-cyan-brand bg-cyan-brand/5"><i class="fas fa-check-circle mr-2"></i>Within 24 Hours</td>
+                            <td class="p-4 text-slate-400"><i class="fas fa-times-circle mr-2 text-red-400"></i>3 to 5 Business Days</td>
+                        </tr>
+                        <tr class="hover:bg-navy-light/30">
+                            <td class="p-4 font-semibold text-white">Communication & Account Lead</td>
+                            <td class="p-4 font-bold text-cyan-brand bg-cyan-brand/5"><i class="fas fa-check-circle mr-2"></i>Dedicated Point of Contact</td>
+                            <td class="p-4 text-slate-400"><i class="fas fa-times-circle mr-2 text-red-400"></i>Call Center / Slow Replies</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee & Quality Section -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+        <div class="reveal bg-gradient-to-r from-navy-light to-slate-900 p-8 md:p-12 rounded-2xl border border-slate-700/80 shadow-2xl grid md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-2">
+                <span class="text-cyan-brand font-bold text-xs uppercase tracking-widest block mb-2">Our Commitment</span>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-4">Quality Service Guarantee</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                    If any part of your agreed commercial scope does not meet your standards, notify us within 24 hours and our team will revisit and correct the area promptly at no extra charge. Your total satisfaction is our baseline requirement.
+                </p>
+                <div class="flex items-center gap-6 text-xs text-slate-300">
+                    <span class="flex items-center gap-2"><i class="fas fa-shield-alt text-cyan-brand"></i> 100% Insured</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-file-contract text-cyan-brand"></i> Transparent Pricing</span>
+                </div>
+            </div>
+            <div class="text-center md:text-right">
+                <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold px-8 py-4 rounded-md hover:bg-cyan-400 transition inline-block text-sm shadow-lg hover:scale-105">
+                    Get Your Free Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="reveal bg-cyan-brand py-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-1">Experience the KayJay Standard</h2>
+                <p class="text-slate-800 font-medium text-sm md:text-base">Request a custom walkthrough or proposal tailored to your property.</p>
+            </div>
+            <div>
+                <a href="contact.html" class="bg-navy text-white font-bold px-8 py-3.5 rounded-md hover:bg-navy-light transition duration-300 shadow-xl inline-block text-center whitespace-nowrap hover:scale-105">
+                    Contact Our Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-light text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm">
+            <!-- Col 1 -->
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <img src="Logo_top_left.png" alt="KayJay Logo" class="h-12 w-auto object-contain">
+                    <span class="text-xl font-bold text-white tracking-wider">KAYJAY</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                    Premier facility & commercial cleaning services serving commercial and residential properties.
+                </p>
+                <div class="inline-flex items-center gap-2 text-[11px] bg-navy px-3 py-1.5 rounded-md border border-slate-700 text-cyan-brand">
+                    <i class="fas fa-shield-alt"></i> Fully Insured & Bonded
+                </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html" class="hover:text-cyan-brand transition">Services</a></li>
+                    <li><a href="why-us.html" class="hover:text-cyan-brand transition">Why KayJay</a></li>
+                    <li><a href="about.html" class="hover:text-cyan-brand transition">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-cyan-brand transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Our Services</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html#office" class="hover:text-cyan-brand transition">Office & Corporate Cleaning</a></li>
+                    <li><a href="services.html#apartment" class="hover:text-cyan-brand transition">Apartment & Multi-Family</a></li>
+                    <li><a href="services.html#turnover" class="hover:text-cyan-brand transition">Move-In / Move-Out Turnover</a></li>
+                    <li><a href="services.html#retail" class="hover:text-cyan-brand transition">Retail & Showroom Care</a></li>
+                    <li><a href="services.html#medical" class="hover:text-cyan-brand transition">Medical & Professional Suites</a></li>
+                    <li><a href="services.html#event" class="hover:text-cyan-brand transition">Event & Venue Care</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Service Hours & Contact</h4>
+                <div class="space-y-2.5 text-xs">
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-cyan-brand"></i>
+                        <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan-brand transition">info@kayjaycleaning.com</a>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-clock text-cyan-brand"></i>
+                        <span>Tailored After-Hours & Weekend Shifts</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-shield-alt text-cyan-brand"></i>
+                        <span>Commercial Facility Care</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-slate-800 text-xs text-center text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                &copy; 2026 KayJay Cleaning Services LLC. All rights reserved.
+            </div>
+            <div class="text-[11px] text-slate-400 italic">
+                "Clean Means Business"
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Fixed Bottom CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-navy-light/95 border-t border-slate-700 p-3 z-50 flex items-center justify-between backdrop-blur-md">
+        <span class="text-xs text-slate-300 font-medium">Need Commercial Cleaning?</span>
+        <a href="contact.html" class="bg-cyan-brand text-slate-900 text-xs font-bold px-4 py-2 rounded shadow">
+            Get Quote
+        </a>
+    </div>
+
+    <!-- 📜 SCRIPTS 📜 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // 📜 HER SCROLL'DA TEKRARLAYAN ANIMASYON
+            const reveals = document.querySelectorAll(".reveal");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px 0px -50px 0px",
+                threshold: 0.05
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    } else {
+                        entry.target.classList.remove("active");
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach((reveal) => {
+                observer.observe(reveal);
+            });
+
+            // Yüklenme anında görünürlük garantisi
+            setTimeout(() => {
+                reveals.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 50);
+        });
+    </script>
+
+</body>
+</html>
