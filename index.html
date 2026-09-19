@@ -62,9 +62,14 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* FAQ Accordion Styling */
+        details[open] summary i {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
-<body class="bg-navy text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-navy text-slate-100 font-sans antialiased min-h-screen flex flex-col pb-16 md:pb-0">
 
     <!-- Top Bar -->
     <div class="bg-[#0b1836] text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
@@ -93,17 +98,33 @@
                     <span class="text-[9px] tracking-widest text-cyan-brand uppercase font-medium mt-1">Facility & Commercial Cleaning</span>
                 </div>
             </a>
+
+            <!-- Desktop Links -->
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="services.html" class="hover:text-cyan-brand transition duration-200">Services</a>
                 <a href="why-us.html" class="hover:text-cyan-brand transition duration-200">Why KayJay</a>
                 <a href="about.html" class="hover:text-cyan-brand transition duration-200">About Us</a>
                 <a href="contact.html" class="hover:text-cyan-brand transition duration-200">Contact</a>
             </div>
+
             <div class="hidden lg:block border-l border-slate-700 pl-6">
                 <span class="text-sm font-semibold tracking-widest text-cyan-brand uppercase italic">
                     "Clean Means Business"
                 </span>
             </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2" aria-label="Toggle Navigation">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light border-b border-slate-700 px-4 pt-2 pb-4 space-y-3 text-sm font-medium">
+            <a href="services.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">Services</a>
+            <a href="why-us.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">Why KayJay</a>
+            <a href="about.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">About Us</a>
+            <a href="contact.html" class="block hover:text-cyan-brand py-1">Contact</a>
         </div>
     </nav>
 
@@ -145,6 +166,28 @@
                     <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Vetted Staff:</strong> Rigorously trained and background-checked technicians.</span></li>
                     <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Quality Audits:</strong> Regular supervisor inspections for top-tier quality.</span></li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Stats Band -->
+    <section class="bg-navy-light/60 py-8 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="reveal">
+                <div class="text-2xl md:text-3xl font-extrabold text-cyan-brand">100%</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Insured & Bonded</div>
+            </div>
+            <div class="reveal">
+                <div class="text-2xl md:text-3xl font-extrabold text-white">24/7</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Flexible Operations</div>
+            </div>
+            <div class="reveal">
+                <div class="text-2xl md:text-3xl font-extrabold text-cyan-brand">24 Hours</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Fast Quote Response</div>
+            </div>
+            <div class="reveal">
+                <div class="text-2xl md:text-3xl font-extrabold text-white">Pittsburgh</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Locally Owned & Operated</div>
             </div>
         </div>
     </section>
@@ -245,6 +288,48 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="py-16 bg-navy-light/40 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="reveal text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Frequently Asked Questions</h2>
+                <p class="text-slate-400 text-sm">Everything you need to know about partnering with KayJay.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="reveal bg-navy-light p-5 rounded-lg border border-slate-700 cursor-pointer group">
+                    <summary class="text-white font-semibold flex justify-between items-center list-none">
+                        <span>Are you fully insured and bonded?</span>
+                        <i class="fas fa-chevron-down text-cyan-brand transition-transform duration-300 text-xs"></i>
+                    </summary>
+                    <p class="text-slate-300 text-sm mt-3 leading-relaxed border-t border-slate-800 pt-3">
+                        Yes, KayJay Cleaning Services LLC is fully insured and bonded. We provide Certificates of Insurance (COI) listing your property management or business entity as an additional insured upon request.
+                    </p>
+                </details>
+
+                <details class="reveal bg-navy-light p-5 rounded-lg border border-slate-700 cursor-pointer group">
+                    <summary class="text-white font-semibold flex justify-between items-center list-none">
+                        <span>Do you offer after-hours and weekend cleaning?</span>
+                        <i class="fas fa-chevron-down text-cyan-brand transition-transform duration-300 text-xs"></i>
+                    </summary>
+                    <p class="text-slate-300 text-sm mt-3 leading-relaxed border-t border-slate-800 pt-3">
+                        Absolutely. We structure our janitorial schedules around your business hours—whether that means overnight shifts, late evenings, or weekend turns—to ensure zero disruption to your daily operations.
+                    </p>
+                </details>
+
+                <details class="reveal bg-navy-light p-5 rounded-lg border border-slate-700 cursor-pointer group">
+                    <summary class="text-white font-semibold flex justify-between items-center list-none">
+                        <span>How quickly can you provide a proposal for my facility?</span>
+                        <i class="fas fa-chevron-down text-cyan-brand transition-transform duration-300 text-xs"></i>
+                    </summary>
+                    <p class="text-slate-300 text-sm mt-3 leading-relaxed border-t border-slate-800 pt-3">
+                        After an initial walkthrough or details submission via our contact form, we deliver custom, itemized commercial proposals within 24 hours.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Banner -->
     <section class="reveal bg-cyan-brand py-12">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -329,30 +414,46 @@
         </div>
     </footer>
 
-    <!-- 📜 Scroll Animation Script (Intersection Observer) 📜 -->
+    <!-- Mobile Fixed Bottom CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-navy-light/95 border-t border-slate-700 p-3 z-50 flex items-center justify-between backdrop-blur-md">
+        <span class="text-xs text-slate-300 font-medium">Need Commercial Cleaning?</span>
+        <a href="contact.html" class="bg-cyan-brand text-slate-900 text-xs font-bold px-4 py-2 rounded shadow">
+            Get Quote
+        </a>
+    </div>
+
+    <!-- 📜 Scripts 📜 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Scroll Animation (Staggered Intersection Observer)
             const reveals = document.querySelectorAll(".reveal");
 
             const observerOptions = {
                 root: null,
-                rootMargin: "0px",
-                threshold: 0.15
+                rootMargin: "0px 0px -50px 0px",
+                threshold: 0.1
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry, index) => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        // Kademeli geliş efekti (Stagger)
-                        setTimeout(() => {
-                            entry.target.classList.add("active");
-                        }, 100);
+                        entry.target.classList.add("active");
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            reveals.forEach(reveal => {
+            reveals.forEach((reveal) => {
                 observer.observe(reveal);
             });
         });
