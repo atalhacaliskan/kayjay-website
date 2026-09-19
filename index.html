@@ -82,7 +82,7 @@
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-6">
                 <span><i class="fas fa-shield-alt text-cyan-brand mr-2"></i>Fully Insured & Bonded</span>
-                <span class="hidden md:inline"><i class="fas fa-check-circle text-cyan-brand mr-2"></i>Flexible After-Hours Service</span>
+                <span class="hidden md:inline"><i class="fas fa-check-circle text-cyan-brand mr-2"></i>Flexible Scheduling Available</span>
             </div>
             <div>
                 <a href="contact.html" class="hover:text-cyan-brand transition flex items-center gap-1.5">
@@ -184,16 +184,16 @@
                 <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Insured & Bonded</div>
             </div>
             <div class="reveal">
-                <div class="text-2xl md:text-3xl font-extrabold text-white">24/7</div>
-                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Flexible Operations</div>
+                <div class="text-2xl md:text-3xl font-extrabold text-white">Custom</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Cleaning Schedules</div>
             </div>
             <div class="reveal">
                 <div class="text-2xl md:text-3xl font-extrabold text-cyan-brand">24 Hours</div>
                 <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Fast Quote Response</div>
             </div>
             <div class="reveal">
-                <div class="text-2xl md:text-3xl font-extrabold text-white">Pittsburgh</div>
-                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Locally Owned & Operated</div>
+                <div class="text-2xl md:text-3xl font-extrabold text-white">Top-Tier</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Quality Standards</div>
             </div>
         </div>
     </section>
@@ -391,20 +391,21 @@
             </div>
 
             <!-- Col 4 -->
+           <!-- Col 4 -->
             <div>
-                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Service Area</h4>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Service Hours & Contact</h4>
                 <div class="space-y-2.5 text-xs">
-                    <p class="flex items-start gap-2">
-                        <i class="fas fa-map-marker-alt text-cyan-brand mt-0.5"></i>
-                        <span>Greater Pittsburgh Region, PA</span>
-                    </p>
                     <p class="flex items-center gap-2">
                         <i class="fas fa-envelope text-cyan-brand"></i>
                         <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan-brand transition">info@kayjaycleaning.com</a>
                     </p>
                     <p class="flex items-center gap-2">
                         <i class="fas fa-clock text-cyan-brand"></i>
-                        <span>24/7 Flexible Scheduling</span>
+                        <span>Tailored After-Hours & Weekend Shifts</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-shield-alt text-cyan-brand"></i>
+                        <span>Commercial Facility Care</span>
                     </p>
                 </div>
             </div>
@@ -430,49 +431,54 @@
 
     <!-- 📜 Scripts 📜 -->
     <script>
-       document.addEventListener("DOMContentLoaded", function() {
-    // Mobile Menu Toggle
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+       <!-- 📜 Sürekli Tekrarlayan Scroll Animasyon Scripti 📜 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-    if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-
-    // 📜 Kademeli & Belirgin Scroll Animation (Stagger Effect)
-    const reveals = document.querySelectorAll(".reveal");
-
-    const observerOptions = {
-        root: null,
-        rootMargin: "0px 0px -80px 0px", // Eleman ekranın biraz içine girince tetiklenir
-        threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                // Aynı anda ekrana giren elemanları sırayla açmak için delay ekliyoruz
-                const parentGrid = entry.target.parentElement;
-                if (parentGrid && parentGrid.classList.contains('grid')) {
-                    const siblings = Array.from(parentGrid.children).filter(child => child.classList.contains('reveal'));
-                    const index = siblings.indexOf(entry.target);
-                    if (index !== -1) {
-                        entry.target.style.transitionDelay = `${index * 120}ms`;
-                    }
-                }
-
-                entry.target.classList.add("active");
-                observer.unobserve(entry.target);
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
-        });
-    }, observerOptions);
 
-    reveals.forEach((reveal) => {
-        observer.observe(reveal);
-    });
-});
+            // 📜 Her Scroll'da Tekrarlayan Stagger Animasyonu
+            const reveals = document.querySelectorAll(".reveal");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px 0px -60px 0px",
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // Grid içindeki kartlar için kademeli gecikme (stagger)
+                        const parentGrid = entry.target.parentElement;
+                        if (parentGrid && parentGrid.classList.contains('grid')) {
+                            const siblings = Array.from(parentGrid.children).filter(child => child.classList.contains('reveal'));
+                            const index = siblings.indexOf(entry.target);
+                            if (index !== -1) {
+                                entry.target.style.transitionDelay = `${index * 100}ms`;
+                            }
+                        }
+                        entry.target.classList.add("active");
+                    } else {
+                        // Ekrandan çıkınca sıfırla ki her yukarı/aşağı scroll'da tekrar çalışsın
+                        entry.target.classList.remove("active");
+                        entry.target.style.transitionDelay = "0ms";
+                    }
+                });
+            }, observerOptions);
+
+            reveals.forEach((reveal) => {
+                observer.observe(reveal);
+            });
+        });
+    </script>
     </script>
 
 </body>
