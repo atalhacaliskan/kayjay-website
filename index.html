@@ -21,13 +21,12 @@
         .bg-cyan-brand { background-color: #00E5FF; }
         .text-cyan-brand { color: #00E5FF; }
         
-        /* 🔥 GLOW & FLOATING HOVER EFFECTS 🔥 */
+        /* 🔥 HOVER & GLOW EFFECTS 🔥 */
         .service-card {
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.6s ease;
-            will-change: transform, box-shadow, opacity;
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         }
         .service-card:hover {
-            transform: translateY(-8px) !important;
+            transform: translateY(-8px);
             border-color: #00E5FF;
             box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.35), 0 0 15px 0 rgba(0, 229, 255, 0.15);
         }
@@ -52,29 +51,18 @@
             animation: pulseGlow 6s infinite ease-in-out;
         }
 
-        /* 📜 SCROLL ANIMATION STYLES 📜 */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px) scale(0.96);
-    filter: blur(2px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform, filter;
-}
+        /* 📜 KESİNTİSİZ & KUSURSUZ SCROLL ANIMATION 📜 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
 
-.reveal.active {
-    opacity: 1 !important;
-    transform: translateY(0) scale(1) !important;
-    filter: blur(0) !important;
-}
-
-        /* 🛡️ Güvenlik Önlemi: JS Desteği Yoksa veya Hata Oluşursa Sayfa Boş Kalmasın */
-no-js .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-}
+        .reveal.active {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
 
         /* FAQ Accordion Styling */
         details[open] summary i {
@@ -155,7 +143,7 @@ no-js .reveal {
                     Premium Facility & Commercial Cleaning
                 </h1>
                 <p class="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
-                    Reliable, high-standard janitorial and property maintenance tailored for offices, apartment complexes, and commercial spaces across the Greater Pittsburgh region.
+                    Reliable, high-standard janitorial and property maintenance tailored for offices, apartment complexes, and commercial spaces.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="contact.html" class="bg-cyan-brand text-slate-900 font-bold px-8 py-3.5 rounded-md text-center hover:bg-cyan-400 transition-all duration-300 shadow-lg hover:shadow-cyan-brand/20 hover:-translate-y-0.5">
@@ -175,7 +163,7 @@ no-js .reveal {
                 </h3>
                 <ul class="space-y-4 text-slate-300 text-sm">
                     <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>OSHA Compliant:</strong> Strict adherence to safety & industry standards.</span></li>
-                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Flexible Schedules:</strong> Daily, weekly, or custom turnover shifts.</span></li>
+                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Flexible Schedules:</strong> Custom turnover shifts tailored to your needs.</span></li>
                     <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Vetted Staff:</strong> Rigorously trained and background-checked technicians.</span></li>
                     <li class="flex items-start"><i class="fas fa-check-circle text-cyan-brand mt-1 mr-3 flex-shrink-0"></i><span><strong>Quality Audits:</strong> Regular supervisor inspections for top-tier quality.</span></li>
                 </ul>
@@ -326,7 +314,7 @@ no-js .reveal {
                         <i class="fas fa-chevron-down text-cyan-brand transition-transform duration-300 text-xs"></i>
                     </summary>
                     <p class="text-slate-300 text-sm mt-3 leading-relaxed border-t border-slate-800 pt-3">
-                        Absolutely. We structure our janitorial schedules around your business hours—whether that means overnight shifts, late evenings, or weekend turns—to ensure zero disruption to your daily operations.
+                        Absolutely. We structure our janitorial schedules around your business hours—offering flexible late evening and weekend shifts—to ensure zero disruption to your daily operations.
                     </p>
                 </details>
 
@@ -368,7 +356,7 @@ no-js .reveal {
                     <span class="text-lg font-bold text-white tracking-wider">KAYJAY</span>
                 </div>
                 <p class="text-xs text-slate-400 mb-4 leading-relaxed">
-                    Premier facility & commercial cleaning services serving commercial and residential properties across the Greater Pittsburgh Area.
+                    Premier facility & commercial cleaning services serving commercial and residential properties.
                 </p>
                 <div class="inline-flex items-center gap-2 text-[11px] bg-navy px-3 py-1.5 rounded-md border border-slate-700 text-cyan-brand">
                     <i class="fas fa-shield-alt"></i> Fully Insured & Bonded
@@ -398,7 +386,6 @@ no-js .reveal {
             </div>
 
             <!-- Col 4 -->
-           <!-- Col 4 -->
             <div>
                 <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Service Hours & Contact</h4>
                 <div class="space-y-2.5 text-xs">
@@ -436,9 +423,7 @@ no-js .reveal {
         </a>
     </div>
 
-    <!-- 📜 Scripts 📜 -->
-    <script>
-       <!-- 📜 Sürekli Tekrarlayan Scroll Animasyon Scripti 📜 -->
+    <!-- 📜 SCRIPTS 📜 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Mobile Menu Toggle
@@ -451,32 +436,22 @@ no-js .reveal {
                 });
             }
 
-            // 📜 Her Scroll'da Tekrarlayan Stagger Animasyonu
+            // 📜 HER SCROLL'DA TEKRARLAYAN KUSURSUZ ANIMASYON
             const reveals = document.querySelectorAll(".reveal");
 
             const observerOptions = {
                 root: null,
-                rootMargin: "0px 0px -60px 0px",
-                threshold: 0.15
+                rootMargin: "0px 0px -50px 0px",
+                threshold: 0.05
             };
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        // Grid içindeki kartlar için kademeli gecikme (stagger)
-                        const parentGrid = entry.target.parentElement;
-                        if (parentGrid && parentGrid.classList.contains('grid')) {
-                            const siblings = Array.from(parentGrid.children).filter(child => child.classList.contains('reveal'));
-                            const index = siblings.indexOf(entry.target);
-                            if (index !== -1) {
-                                entry.target.style.transitionDelay = `${index * 100}ms`;
-                            }
-                        }
                         entry.target.classList.add("active");
                     } else {
-                        // Ekrandan çıkınca sıfırla ki her yukarı/aşağı scroll'da tekrar çalışsın
+                        // Ekrandan çıkınca sıfırla ki her aşağı/yukarı kaydırmada tekrar çalışsın
                         entry.target.classList.remove("active");
-                        entry.target.style.transitionDelay = "0ms";
                     }
                 });
             }, observerOptions);
@@ -484,8 +459,17 @@ no-js .reveal {
             reveals.forEach((reveal) => {
                 observer.observe(reveal);
             });
+
+            // Sayfa ilk açıldığında üstte kalan elemanları garanti görünür yap
+            setTimeout(() => {
+                reveals.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 50);
         });
-    </script>
     </script>
 
 </body>
