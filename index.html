@@ -21,7 +21,7 @@
         .bg-cyan-brand { background-color: #00E5FF; }
         .text-cyan-brand { color: #00E5FF; }
         
-        /* 🔥 HOVER & GLOW EFFECTS 🔥 */
+        /* HOVER & GLOW EFFECTS */
         .service-card {
             transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         }
@@ -51,7 +51,7 @@
             animation: pulseGlow 6s infinite ease-in-out;
         }
 
-        /* 📜 KESİNTİSİZ & KUSURSUZ SCROLL ANIMATION 📜 */
+        /* SCROLL ANIMATION */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -155,85 +155,67 @@
                 </div>
             </div>
 
-           <!-- Promotional Video Section -->
-<section class="py-16 bg-slate-900 text-white">
-  <div class="max-w-5xl mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-3 tracking-tight">See Us In Action</h2>
-    <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-      Watch how KayJay Cleaning Services brings commercial-grade reliability and spotless hygiene to every space.
-    </p>
+            <!-- Trust Card (Hero Right Side) -->
+            <div class="reveal bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6 shadow-xl">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2 text-center justify-center">
+                    <span class="text-cyan-400">🏅</span> Why Property Managers Trust Us
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/40">
+                        <div class="text-cyan-400 font-bold mb-1">✓ OSHA Compliant</div>
+                        <p class="text-xs text-slate-400">Strict adherence to safety & industry standards.</p>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/40">
+                        <div class="text-cyan-400 font-bold mb-1">✓ Flexible Schedules</div>
+                        <p class="text-xs text-slate-400">Custom turnover shifts tailored to your needs.</p>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/40">
+                        <div class="text-cyan-400 font-bold mb-1">✓ Vetted Staff</div>
+                        <p class="text-xs text-slate-400">Rigorously trained & background-checked.</p>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/40">
+                        <div class="text-cyan-400 font-bold mb-1">✓ Quality Audits</div>
+                        <p class="text-xs text-slate-400">Regular supervisor inspections for top quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Video Container -->
-    <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-black group">
-      <video 
-        id="promoVideo"
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        preload="auto"
-        controls
-        class="w-full h-full object-cover">
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <!-- Promotional Video Section -->
+    <section class="py-16 bg-slate-900 text-white border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3 tracking-tight">See Us In Action</h2>
+            <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+                Watch how KayJay Cleaning Services brings commercial-grade reliability and spotless hygiene to every space.
+            </p>
 
-      <!-- Unmute Button Overlay -->
-      <button 
-        id="unmuteBtn"
-        onclick="toggleSound()"
-        class="absolute bottom-6 right-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded-full shadow-lg transition-all flex items-center space-x-2 z-10 cursor-pointer opacity-90 hover:opacity-100">
-        <span id="soundIcon">🔇</span>
-        <span id="soundText">Click for Sound</span>
-      </button>
-    </div>
-  </div>
-</section>
+            <!-- Video Container -->
+            <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-black group">
+                <video 
+                    id="promoVideo"
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    preload="auto"
+                    controls
+                    class="w-full h-full object-cover">
+                    <source src="video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-<script>
-  function toggleSound() {
-    const video = document.getElementById('promoVideo');
-    const soundIcon = document.getElementById('soundIcon');
-    const soundText = document.getElementById('soundText');
-
-    if (video.muted) {
-      video.muted = false;
-      soundIcon.textContent = '🔊';
-      soundText.textContent = 'Mute';
-    } else {
-      video.muted = true;
-      soundIcon.textContent = '🔇';
-      soundText.textContent = 'Click for Sound';
-    }
-  }
-</script>
-    
-            <!-- Trust Card -->
-<div class="w-full bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6 shadow-xl mt-8">
-  <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2 text-center justify-center">
-    <span class="text-cyan-400">🏅</span> Why Property Managers Trust Us
-  </h3>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm text-slate-300">
-    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/40">
-      <div class="text-cyan-400 font-bold mb-1">✓ OSHA Compliant</div>
-      <p class="text-xs text-slate-400">Strict adherence to safety & industry standards.</p>
-    </div>
-    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/40">
-      <div class="text-cyan-400 font-bold mb-1">✓ Flexible Schedules</div>
-      <p class="text-xs text-slate-400">Custom turnover shifts tailored to your needs.</p>
-    </div>
-    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/40">
-      <div class="text-cyan-400 font-bold mb-1">✓ Vetted Staff</div>
-      <p class="text-xs text-slate-400">Rigorously trained & background-checked.</p>
-    </div>
-    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/40">
-      <div class="text-cyan-400 font-bold mb-1">✓ Quality Audits</div>
-      <p class="text-xs text-slate-400">Regular supervisor inspections for top quality.</p>
-    </div>
-  </div>
-</div>
- <section>            
+                <!-- Unmute Button Overlay -->
+                <button 
+                    id="unmuteBtn"
+                    onclick="toggleSound()"
+                    class="absolute bottom-6 right-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded-full shadow-lg transition-all flex items-center space-x-2 z-10 cursor-pointer opacity-90 hover:opacity-100">
+                    <span id="soundIcon">🔇</span>
+                    <span id="soundText">Click for Sound</span>
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- Social Proof / Stats Band -->
     <section class="bg-navy-light/60 py-8 border-b border-slate-800">
@@ -265,7 +247,6 @@
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
             <!-- Service 1 -->
             <div class="reveal service-card bg-navy-light p-8 rounded-xl border border-slate-700/80 flex flex-col justify-between cursor-pointer">
                 <div>
@@ -349,7 +330,6 @@
                     Learn More <i class="card-arrow fas fa-arrow-right ml-2 text-xs"></i>
                 </a>
             </div>
-
         </div>
     </section>
 
@@ -456,9 +436,9 @@
                 <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider border-b border-slate-700 pb-2 inline-block">Service Hours & Contact</h4>
                 <div class="space-y-2.5 text-xs">
                     <p class="flex items-center gap-2">
-    <i class="fas fa-phone text-cyan-brand"></i>
-    <a href="tel:+14125550199" class="hover:text-cyan-brand transition">(412) xxxxxxx</a>
-</p>
+                        <i class="fas fa-phone text-cyan-brand"></i>
+                        <a href="tel:+14125550199" class="hover:text-cyan-brand transition">(412) xxxxxxx</a>
+                    </p>
                     <p class="flex items-center gap-2">
                         <i class="fas fa-envelope text-cyan-brand"></i>
                         <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan-brand transition">info@kayjaycleaning.com</a>
@@ -485,16 +465,32 @@
         </div>
     </footer>
 
-   <!-- Mobile Fixed Bottom CTA Bar -->
-<div class="md:hidden fixed bottom-0 left-0 right-0 bg-navy-light/95 border-t border-slate-700 p-3 z-50 flex items-center justify-between backdrop-blur-md">
-    <span class="text-xs text-slate-300 font-medium">Need Commercial Cleaning?</span>
-    <a href="tel:+1412xxxxxxx" class="bg-cyan-brand text-slate-900 text-xs font-bold px-4 py-2 rounded shadow flex items-center gap-1.5">
-        <i class="fas fa-phone-alt"></i> Call Us
-    </a>
-</div>
+    <!-- Mobile Fixed Bottom CTA Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-navy-light/95 border-t border-slate-700 p-3 z-50 flex items-center justify-between backdrop-blur-md">
+        <span class="text-xs text-slate-300 font-medium">Need Commercial Cleaning?</span>
+        <a href="tel:+1412xxxxxxx" class="bg-cyan-brand text-slate-900 text-xs font-bold px-4 py-2 rounded shadow flex items-center gap-1.5">
+            <i class="fas fa-phone-alt"></i> Call Us
+        </a>
+    </div>
 
-    <!-- 📜 SCRIPTS 📜 -->
+    <!-- SCRIPTS -->
     <script>
+        function toggleSound() {
+            const video = document.getElementById('promoVideo');
+            const soundIcon = document.getElementById('soundIcon');
+            const soundText = document.getElementById('soundText');
+
+            if (video.muted) {
+                video.muted = false;
+                soundIcon.textContent = '🔊';
+                soundText.textContent = 'Mute';
+            } else {
+                video.muted = true;
+                soundIcon.textContent = '🔇';
+                soundText.textContent = 'Click for Sound';
+            }
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
             // Mobile Menu Toggle
             const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -506,7 +502,7 @@
                 });
             }
 
-            // 📜 HER SCROLL'DA TEKRARLAYAN KUSURSUZ ANIMASYON
+            // SCROLL REVEAL ANIMATION
             const reveals = document.querySelectorAll(".reveal");
 
             const observerOptions = {
@@ -520,7 +516,6 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add("active");
                     } else {
-                        // Ekrandan çıkınca sıfırla ki her aşağı/yukarı kaydırmada tekrar çalışsın
                         entry.target.classList.remove("active");
                     }
                 });
@@ -530,7 +525,6 @@
                 observer.observe(reveal);
             });
 
-            // Sayfa ilk açıldığında üstte kalan elemanları garanti görünür yap
             setTimeout(() => {
                 reveals.forEach(el => {
                     const rect = el.getBoundingClientRect();
