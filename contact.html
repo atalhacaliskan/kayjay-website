@@ -244,7 +244,10 @@
                     <p class="text-xs text-slate-400">  Share a few details about your property and cleaning needs and we’ll follow up with you directly.</p>
                 </div>
 
-                <form id="contact-form" class="space-y-4">
+                <form id="contact-form"
+      action="https://formspree.io/f/xyezewop"
+      method="POST"
+      class="space-y-4">
 
     <div class="grid md:grid-cols-2 gap-4">
 
@@ -371,9 +374,8 @@
 
     <!-- Submit -->
     <button type="submit"
-            data-fs-submit-btn
-            class="w-full bg-cyan-brand text-slate-900 font-extrabold py-3.5 rounded-lg hover:bg-cyan-300 transition duration-300 shadow-xl flex items-center justify-center gap-2">
-
+        class="w-full bg-cyan-brand text-slate-900 font-extrabold py-3.5 rounded-lg hover:bg-cyan-300 transition duration-300 shadow-xl flex items-center justify-center gap-2">
+            
         <i class="fas fa-paper-plane"></i>
         Request My Free Quote
 
@@ -524,24 +526,64 @@
             }, 50);
         });
     </script>
+    <script>
+    const contactForm = document.getElementById("contact-form");
 
-    </h3>
+    contactForm.addEventListener("submit", async function(event) {
+        event.preventDefault();
 
-                    <p class="text-slate-300 text-sm leading-relaxed max-w-md mx-auto mb-6">
-                        We received your request and will be in touch soon to learn more about your property and cleaning needs.
-                    </p>
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButton = submitButton.innerHTML;
 
-                    <a href="/"
-                       class="inline-block bg-cyan-brand text-slate-900 font-bold px-6 py-3 rounded-lg hover:bg-cyan-300 transition">
-                        Back to Home
-                    </a>
-                </div>
-            `;
+        submitButton.disabled = true;
+        submitButton.innerHTML = `
+            <i class="fas fa-spinner fa-spin"></i>
+            Sending...
+        `;
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: new FormData(contactForm),
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                contactForm.innerHTML = `
+                    <div class="text-center py-12 px-6">
+
+                        <div class="w-16 h-16 bg-cyan-brand/10 border border-cyan-brand/40 rounded-full flex items-center justify-center mx-auto mb-5">
+                            <i class="fas fa-check text-cyan-brand text-2xl"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-extrabold text-white mb-3">
+                            Request Received!
+                        </h3>
+
+                        <p class="text-slate-300 text-sm leading-relaxed max-w-md mx-auto mb-2">
+                            Thank you for contacting KayJay Cleaning Services.
+                        </p>
+
+                        <p class="text-slate-400 text-sm leading-relaxed max-w-md mx-auto">
+                            Your request was submitted successfully. We’ll review your cleaning needs and get back to you soon.
+                        </p>
+
+                    </div>
+                `;
+            } else {
+                throw new Error("Submission failed.");
+            }
+
+        } catch (error) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButton;
+
+            alert("Something went wrong. Please try again or email us at info@kayjaycleaning.com.");
         }
     });
 </script>
-
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
