@@ -382,6 +382,47 @@
     </div>
 
 </section>
+    <!-- Photo Lightbox -->
+<div id="workLightbox"
+     class="hidden fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4">
+
+    <!-- Close Button -->
+    <button type="button"
+            onclick="closeWorkLightbox()"
+            class="absolute top-5 right-5 text-white text-3xl hover:text-cyan-brand transition z-20"
+            aria-label="Close photo">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Previous -->
+    <button type="button"
+            onclick="changeWorkImage(-1)"
+            class="absolute left-3 md:left-8 text-white text-3xl hover:text-cyan-brand transition z-20"
+            aria-label="Previous photo">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Large Image -->
+    <div class="max-w-6xl w-full flex flex-col items-center">
+        <img id="workLightboxImage"
+             src=""
+             alt="KayJay Cleaning project"
+             class="max-h-[82vh] max-w-full object-contain rounded-xl shadow-2xl">
+
+        <p id="workLightboxCaption"
+           class="text-slate-300 text-sm mt-4 text-center">
+        </p>
+    </div>
+
+    <!-- Next -->
+    <button type="button"
+            onclick="changeWorkImage(1)"
+            class="absolute right-3 md:right-8 text-white text-3xl hover:text-cyan-brand transition z-20"
+            aria-label="Next photo">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+</div>
 
     <!-- Footer -->
     <footer class="bg-navy-light text-slate-400 py-12 border-t border-slate-800">
