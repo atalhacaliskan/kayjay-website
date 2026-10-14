@@ -174,7 +174,7 @@
     </section>
 
    <!-- Our Work Gallery -->
-<section class="py-16 max-w-7xl mx-auto px-4">
+<section id="workGallery" class="py-16 max-w-7xl mx-auto px-4">
 
     <!-- Carpet Cleaning Project -->
     <div class="reveal mb-16">
@@ -513,31 +513,132 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+    let workImages = [];
+    let currentWorkImage = 0;
 
-            const mobileBtn = document.getElementById("mobile-menu-btn");
-            const mobileMenu = document.getElementById("mobile-menu");
+    function openWorkLightbox(index) {
+        currentWorkImage = index;
 
-            if (mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener("click", function() {
-                    mobileMenu.classList.toggle("hidden");
-                });
+        const lightbox = document.getElementById("workLightbox");
+        const image = document.getElementById("workLightboxImage");
+        const caption = document.getElementById("workLightboxCaption");
+
+        image.src = workImages[index].src;
+        image.alt = workImages[index].alt;
+        caption.textContent = workImages[index].alt;
+
+        lightbox.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeWorkLightbox() {
+        const lightbox = document.getElementById("workLightbox");
+
+        lightbox.classList.add("hidden");
+        document.body.style.overflow = "";
+    }
+
+    function changeWorkImage(direction) {
+        currentWorkImage += direction;
+
+        if (currentWorkImage < 0) {
+            currentWorkImage = workImages.length - 1;
+        }
+
+        if (currentWorkImage >= workImages.length) {
+            currentWorkImage = 0;
+        }
+
+        const image = document.getElementById("workLightboxImage");
+        const caption = document.getElementById("workLightboxCaption");
+
+        image.src = workImages[currentWorkImage].src;
+        image.alt = workImages[currentWorkImage].alt;
+        caption.textContent = workImages[currentWorkImage].alt;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        // Mobile Menu
+        const mobileBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener("click", function() {
+                mobileMenu.classList.toggle("hidden");
+            });
+        }
+
+        // Scroll Animation
+        const reveals = document.querySelectorAll(".reveal");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        });
+
+        reveals.forEach((el) => observer.observe(el));
+
+
+        // Work Gallery Lightbox
+        const galleryImages = document.querySelectorAll("#workGallery img");
+
+        workImages = Array.from(galleryImages).map((img) => ({
+            src: img.getAttribute("src"),
+            alt: img.getAttribute("alt") || "KayJay Cleaning project"
+        }));
+
+        galleryImages.forEach((img, index) => {
+
+            img.classList.add(
+                "cursor-pointer",
+                "transition",
+                "duration-300",
+                "hover:opacity-90"
+            );
+
+            img.addEventListener("click", function() {
+                openWorkLightbox(index);
+            });
+        });
+
+
+        // Close when clicking dark background
+        const lightbox = document.getElementById("workLightbox");
+
+        lightbox.addEventListener("click", function(event) {
+            if (event.target === lightbox) {
+                closeWorkLightbox();
+            }
+        });
+
+
+        // Keyboard controls
+        document.addEventListener("keydown", function(event) {
+
+            if (lightbox.classList.contains("hidden")) {
+                return;
             }
 
-            const reveals = document.querySelectorAll(".reveal");
+            if (event.key === "Escape") {
+                closeWorkLightbox();
+            }
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("active");
-                    }
-                });
-            });
+            if (event.key === "ArrowRight") {
+                changeWorkImage(1);
+            }
 
-            reveals.forEach((el) => observer.observe(el));
+            if (event.key === "ArrowLeft") {
+                changeWorkImage(-1);
+            }
 
         });
-    </script>
+
+    });
+</script>
 
 </body>
 </html>
