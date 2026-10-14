@@ -1,1 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Our Work | Commercial Cleaning Projects | KayJay Cleaning</title>
+
+    <meta name="description" content="See real cleaning projects completed by KayJay Cleaning Services, including commercial cleaning, turnovers, carpet cleaning, offices, and property cleaning across Greater Pittsburgh.">
+
+    <link rel="canonical" href="https://www.kayjaycleaning.com/our-work.html">
+
+    <link rel="icon" type="image/png" href="Logo_top_left.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .bg-navy { background-color: #0F172A; }
+        .bg-navy-light { background-color: #1E293B; }
+        .bg-cyan-brand { background-color: #00E5FF; }
+        .text-cyan-brand { color: #00E5FF; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-navy text-slate-100 font-sans antialiased min-h-screen flex flex-col pb-16 md:pb-0">
+
+    <!-- Top Bar -->
+    <div class="bg-[#0b1836] text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+
+            <div class="flex items-center space-x-6">
+                <span>
+                    <i class="fas fa-shield-alt text-cyan-brand mr-2"></i>
+                    Fully Insured
+                </span>
+
+                <span class="hidden md:inline">
+                    <i class="fas fa-check-circle text-cyan-brand mr-2"></i>
+                    Flexible Scheduling Available
+                </span>
+            </div>
+
+            <div>
+                <a href="mailto:info@kayjaycleaning.com"
+                   class="hover:text-cyan-brand transition flex items-center gap-1.5">
+                    <i class="fas fa-envelope text-cyan-brand"></i>
+                    info@kayjaycleaning.com
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-navy-light/95 sticky top-0 z-50 shadow-lg border-b border-slate-700/80 backdrop-blur-md">
+
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+
+            <a href="/" class="flex items-center space-x-3 group">
+                <img src="Logo_top_left.png"
+                     alt="KayJay Logo"
+                     class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+
+                <div class="flex flex-col justify-center">
+                    <span class="text-xl font-bold tracking-wider text-white leading-none">
+                        KAYJAY
+                    </span>
+
+                    <span class="text-[9px] tracking-widest text-cyan-brand uppercase font-medium mt-1">
+                        Facility & Commercial Cleaning
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="services.html" class="hover:text-cyan-brand transition duration-200">
+                    Services
+                </a>
+
+                <a href="our-work.html" class="text-cyan-brand font-bold">
+                    Our Work
+                </a>
+
+                <a href="why-us.html" class="hover:text-cyan-brand transition duration-200">
+                    Why KayJay
+                </a>
+
+                <a href="about.html" class="hover:text-cyan-brand transition duration-200">
+                    About Us
+                </a>
+
+                <a href="contact.html" class="hover:text-cyan-brand transition duration-200">
+                    Contact
+                </a>
+            </div>
+
+            <div class="hidden lg:block border-l border-slate-700 pl-6">
+                <span class="text-sm font-semibold tracking-widest text-cyan-brand uppercase italic">
+                    "Clean Means Business"
+                </span>
+            </div>
+
+            <button id="mobile-menu-btn"
+                    class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2"
+                    aria-label="Toggle Navigation">
+
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+             class="hidden md:hidden bg-navy-light border-b border-slate-700 px-4 pt-2 pb-4 space-y-3 text-sm font-medium">
+
+            <a href="services.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">
+                Services
+            </a>
+
+            <a href="our-work.html" class="block text-cyan-brand font-bold py-1 border-b border-slate-800">
+                Our Work
+            </a>
+
+            <a href="why-us.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">
+                Why KayJay
+            </a>
+
+            <a href="about.html" class="block hover:text-cyan-brand py-1 border-b border-slate-800">
+                About Us
+            </a>
+
+            <a href="contact.html" class="block hover:text-cyan-brand py-1">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative py-16 md:py-20 bg-navy border-b border-slate-800 overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+
+            <span class="text-cyan-brand font-bold text-xs uppercase tracking-widest block mb-3">
+                Real Projects
+            </span>
+
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+                Our Work
+            </h1>
+
+            <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                A look at real cleaning projects completed by KayJay Cleaning Services.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Gallery Placeholder -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+
+        <div class="reveal text-center">
+
+            <p class="text-slate-400 text-sm">
+                Project photos coming soon.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-light text-slate-400 py-12 border-t border-slate-800">
+
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm">
+
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <img src="Logo_top_left.png"
+                         alt="KayJay Logo"
+                         class="h-14 w-auto object-contain">
+
+                    <span class="text-xl font-bold text-white tracking-wider">
+                        KAYJAY CLEANING SERVICES
+                    </span>
+                </div>
+
+                <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                    Professional facility and commercial cleaning services for businesses,
+                    apartment communities, and properties across Greater Pittsburgh.
+                </p>
+
+                <div class="inline-flex items-center gap-2 text-[11px] bg-navy px-3 py-1.5 rounded-md border border-slate-700 text-cyan-brand">
+                    <i class="fas fa-shield-alt"></i>
+                    Fully Insured
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">
+                    Navigation
+                </h4>
+
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html" class="hover:text-cyan-brand">Services</a></li>
+                    <li><a href="our-work.html" class="hover:text-cyan-brand">Our Work</a></li>
+                    <li><a href="why-us.html" class="hover:text-cyan-brand">Why KayJay</a></li>
+                    <li><a href="about.html" class="hover:text-cyan-brand">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-cyan-brand">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">
+                    Our Services
+                </h4>
+
+                <ul class="space-y-2 text-xs">
+                    <li><a href="services.html#office" class="hover:text-cyan-brand">Office & Corporate Cleaning</a></li>
+                    <li><a href="services.html#apartment" class="hover:text-cyan-brand">Apartment & Multi-Family</a></li>
+                    <li><a href="services.html#turnover" class="hover:text-cyan-brand">Move-In / Move-Out Turnover</a></li>
+                    <li><a href="services.html#retail" class="hover:text-cyan-brand">Retail & Showroom Care</a></li>
+                    <li><a href="services.html#medical" class="hover:text-cyan-brand">Professional & Client-Facing Spaces</a></li>
+                    <li><a href="services.html#event" class="hover:text-cyan-brand">Event & Venue Care</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">
+                    Contact
+                </h4>
+
+                <div class="space-y-2.5 text-xs">
+
+                    <p>
+                        <i class="fas fa-phone text-cyan-brand mr-2"></i>
+                        <a href="tel:+14127461002" class="hover:text-cyan-brand">
+                            (412) 746-1002
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="fas fa-envelope text-cyan-brand mr-2"></i>
+                        <a href="mailto:info@kayjaycleaning.com" class="hover:text-cyan-brand">
+                            info@kayjaycleaning.com
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-slate-800 text-xs text-center text-slate-500">
+            &copy; 2026 KayJay Cleaning Services LLC. All rights reserved.
+        </div>
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const mobileBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener("click", function() {
+                    mobileMenu.classList.toggle("hidden");
+                });
+            }
+
+            const reveals = document.querySelectorAll(".reveal");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            });
+
+            reveals.forEach((el) => observer.observe(el));
+
+        });
+    </script>
+
+</body>
+</html>
